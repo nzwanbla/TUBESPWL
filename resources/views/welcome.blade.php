@@ -7,17 +7,15 @@
     <title></title>
 </head>
 <body>
-    @foreach ($berita as $news)
-    <h1> {{ $news ['judul_berita']}} </h1>
-    <h1> {{ $news ['jenis_berita']}} </h1>
-    <h1> {{ $news ['judul1']}} </h1>
-    <h1> {{ $news ['isi1']}} </h1>
-    <h1> {{ $news ['judul2']}} </h1>
-    <h1> {{ $news ['isi2']}} </h1>
-    <h1> {{ $news ['judul3']}} </h1>
-    <h1> {{ $news ['isi3']}} </h1>
-        <hr>
-    @endforeach
+    <h1>{{ $news->judul_berita }}</h1>
+    <h2>{{ $news->jenis_berita }}</h2>
+    <h3>{{ $news->judul1 }}</h3>
+    <p>{{ $news->isi1 }}</p>
+    <h3>{{ $news->judul2 }}</h3>
+    <p>{{ $news->isi2 }}</p>
+    <h3>{{ $news->judul3 }}</h3>
+    <p>{{ $news->isi3 }}</p>
+    <hr>
 
     
 </body>
