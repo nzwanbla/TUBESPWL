@@ -27,7 +27,7 @@ class WelcomeController extends Controller
 
     public function store(Request $request)
     {
-        return berita::create($request->all());
+        
     }
 
     public function update(Request $request, $id)

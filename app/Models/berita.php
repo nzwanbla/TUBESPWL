@@ -11,7 +11,8 @@ class berita extends Model
 
         protected $table = 'berita'; 
         protected $primaryKey = 'id'; 
-
+        public $timestamps = false;
+        
         protected $fillable = [
             'judul_berita',
             'jenis_berita',
