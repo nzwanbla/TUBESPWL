@@ -11,7 +11,6 @@ class WelcomeController extends Controller
     public function welcome(Berita $berita)
     {
         $news = berita::all();
-
         return view('headline',['news' => $news]);
     }
 
@@ -26,7 +25,7 @@ class WelcomeController extends Controller
     }
 
     public function store(Request $request)
-    {
+    { 
         
     }
 
