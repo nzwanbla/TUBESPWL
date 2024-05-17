@@ -24,29 +24,21 @@ Portal Berita, platform digital yang dirancang untuk menyediakan akses cepat dan
 
 ## Fitur-fitur :
 
-- Sign Up
-  Fitur ini memungkinkan pengguna baru untuk mendaftar dan membuat akun pada portal berita.
+- Sign Up : Fitur ini memungkinkan pengguna baru untuk mendaftar dan membuat akun pada portal berita.
 
-- Log In
-  Fitur ini memungkinkan pengguna yang sudah terdaftar untuk masuk ke akun mereka.
+- Log In : Fitur ini memungkinkan pengguna yang sudah terdaftar untuk masuk ke akun mereka.
 
-- Halaman berita
-  Halaman yang menampilkan artikel berita.
+- Halaman berita : Halaman yang menampilkan artikel berita.
 
-- Halaman edit berita (Posting berita)
-  Halaman ini digunakan oleh penulis atau editor untuk membuat dan mengedit artikel berita.
+- Halaman edit berita (Posting berita) : Halaman ini digunakan oleh penulis atau editor untuk membuat dan mengedit artikel berita.
 
-- Headlines
-  Daftar artikel dengan judul yang mencolok dan ringkasan singkat.
+- Headlines : Daftar artikel dengan judul yang mencolok dan ringkasan singkat.
 
-- Kategori berita
-  Pengelompokan artikel berdasarkan topik atau tema tertentu.
+- Kategori berita : Pengelompokan artikel berdasarkan topik atau tema tertentu.
 
-- Fitur Pencarian
-  Fitur ini memungkinkan pengguna untuk menemukan berita spesifik dengan cepat.
+- Fitur Pencarian : Fitur ini memungkinkan pengguna untuk menemukan berita spesifik dengan cepat.
 
-- Komentar atau saran
-  Fitur interaktif yang memungkinkan pengguna untuk berkomentar dan memberikan saran tentang berita yang dipublikasikan.
+- Komentar atau saran : Fitur interaktif yang memungkinkan pengguna untuk berkomentar dan memberikan saran tentang berita yang dipublikasikan.
 
 ## Persyaratan Environment
 
