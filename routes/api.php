@@ -18,7 +18,7 @@ Route::resource('berita', WelcomeController::class);
 
 // Route for individual news
 Route::get('news/{id}', [WelcomeController::class, 'show'])->name('news.show'); 
-
+ 
 //Route for create news
 Route::get('create', [CreateController::class, 'index'])->name('create.show');
 Route::post('create', [CreateController::class, 'store'])->name('create.store');
@@ -26,6 +26,7 @@ Route::post('create', [CreateController::class, 'store'])->name('create.store');
 //Route for edit page
 Route::get('edit/{id}', [EditController::class, 'show'])->name('edit.show');
 Route::post('edit/{id}', [EditController::class, 'update'])->name('edit.update');
+Route::delete('edit/{id}', [EditController::class, 'destroy'])->name('edit.delete');
 
 //route for editing picked article
 Route::get('search', [SearchController::class, 'index'])->name('search.show');

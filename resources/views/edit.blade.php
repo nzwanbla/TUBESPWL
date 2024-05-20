@@ -153,13 +153,15 @@
             margin-right: 0;
         }
 
+        #buttons{
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-        #push{
-            display: block;
+        #delete, #post{
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 50px;
-            display: block;
             padding: 10px 20px; /* Add padding for space inside the button */
             font-size: 16px; /* Increase font size for better readability */
             font-weight: bold; /* Make the text bold */
@@ -195,7 +197,7 @@
 
     <form id="editor-form" method="POST" action="{{ route('edit.update', ['id' => $selectedNews->id] ) }}">
         <!-- CSRF Token -->
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="_method" id="form-method" value="POST">
 
         <div class="horizontal-group" >
             <div class="form-group" id="judul">
@@ -239,7 +241,28 @@
             <textarea id="isi3" name="isi3" rows="3" >{{ $selectedNews->isi3 ?? '' }}</textarea>
         </div>
 
-        <button id="push" type="push">Update</button>
+        <div  id="buttons">
+            <button id="post" type="button" onclick="submitForm('post')">Post</button>
+            <button id="delete" type="button" onclick="submitForm('delete')">Delete</button>            
+        </div>
+
     </form>
+
+    <script>
+        function submitForm(action) {
+            const form = document.getElementById('editor-form');
+            const methodInput = document.getElementById('form-method');
+    
+            if (action === 'post') {
+                form.action = "{{ route('edit.update', ['id' => $selectedNews->id]) }}";
+                methodInput.value = 'POST';
+            } else if (action === 'delete') {
+                form.action = "{{ route('edit.delete', ['id' => $selectedNews->id]) }}";
+                methodInput.value = 'DELETE';
+            }
+    
+            form.submit(); 
+        }
+    </script>
 </body>
 </html>

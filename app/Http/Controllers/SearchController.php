@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 Use App\Models\berita;
 class SearchController extends Controller
 {
-    /**
+    /** 
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

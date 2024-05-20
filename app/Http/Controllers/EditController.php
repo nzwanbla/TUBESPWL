@@ -27,21 +27,7 @@ class EditController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'judul_berita'  => 'required',
-            'jenis_berita'  => 'required',
-            'judul1'        => 'required',
-            'isi1'          => 'required',
-            'judul2'        => 'nullable',
-            'isi2'          => 'nullable',
-            'judul3'        => 'nullable',
-            'isi3'          => 'nullable',
-        ]); 
 
-        $berita = Berita::create($validated);
-        $news = berita::all();
-
-        return view('edit', ['news' => $news]);
    }
 
     /**
@@ -77,7 +63,7 @@ class EditController extends Controller
 
         $beritaDipilih = berita::findOrFail($id);  
         $beritaDipilih->update($validatedData);
-        return route('search.show');
+        return redirect()->route('search.show'); 
 
     }
 

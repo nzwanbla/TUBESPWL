@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 Use App\Models\jenis;
+Use App\Models\berita;
 use Illuminate\Http\Request;
 
 class CreateController extends Controller
@@ -25,7 +26,20 @@ class CreateController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $validated = $request->validate([
+            'judul_berita'  => 'required',
+            'jenis_berita'  => 'required',
+            'judul1'        => 'required',
+            'isi1'          => 'required', 
+            'judul2'        => 'nullable',
+            'isi2'          => 'nullable',
+            'judul3'        => 'nullable',
+            'isi3'          => 'nullable',
+        ]); 
+
+        $berita = Berita::create($validated);
+
+        return redirect()->route('create.show');
     }
 
     /**

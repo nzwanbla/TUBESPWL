@@ -200,7 +200,7 @@
             <div class="form-group" id="judul">
                 <label for="judul_berita">Judul Berita</label>
                 <input type="text" id="judul_berita" name="judul_berita">
-            </div>
+            </div> 
 
             <div class="form-group" id="jenis">
                 <label for="jenis_berita">Jenis Berita</label>

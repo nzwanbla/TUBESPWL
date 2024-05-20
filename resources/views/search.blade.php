@@ -192,7 +192,7 @@
         </div>
     </div>
 
-
+ 
     <form id="editor-form" method="POST" action="{{ route('search.run') }}">
         <!-- CSRF Token -->
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -210,14 +210,6 @@
         <button id="search" type="search">Search</button>
     </form>
 
-    {{-- <script>
-        function updateFormAction(selectElement) {
-            var selectedOption = selectElement.options[selectElement.selectedIndex];
-            var form = document.getElementById('editor-form');
-            var id = selectedOption.value;
-            form.action = "{{ url('api/edit') }}/" + id;
-        }
-    </script> --}}
 </body>
 
 </html>
