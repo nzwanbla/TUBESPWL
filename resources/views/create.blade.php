@@ -182,20 +182,20 @@
         </div>
     </div>
 
+    <div class="slider-container">
+        <div class="slider">
+            <input type="radio" name="slider" id="create" checked>
+            <input type="radio" name="slider" id="edit" onclick="location.href='{{ route('search.show') }}'">
+            <div class="slider-button"></div>
+            <label for="create" class="slider-option">Create</label>
+            <label for="edit" class="slider-option">Edit</label>
+        </div>
+    </div>
+
     <form id="editor-form" method="POST" action="{{ route('create.store') }}">
         <!-- CSRF Token -->
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-        <div class="slider-container">
-            <div class="slider">
-                <input type="radio" name="slider" id="create" checked>
-                <input type="radio" name="slider" id="edit" onclick="location.href='{{ route('edit.show') }}'">
-                <div class="slider-button"></div>
-                <label for="create" class="slider-option">Create</label>
-                <label for="edit" class="slider-option">Edit</label>
-            </div>
-        </div>
-    
         <div class="horizontal-group" >
             <div class="form-group" id="judul">
                 <label for="judul_berita">Judul Berita</label>

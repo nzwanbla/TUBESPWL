@@ -11,10 +11,12 @@ class EditController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Berita $berita)
+    public function index(Request $request)
     {
         $news = berita::all();
-        return view('edit',['news' => $news]);
+        // $selectedNews = berita::where('judul_berita', $request->judul_berita)->first();
+        
+        return view('edit', ['news' => $news, 'selectedNews' => $selectedNews]);
     }
 
     /**
@@ -37,9 +39,10 @@ class EditController extends Controller
         ]); 
 
         $berita = Berita::create($validated);
+        $news = berita::all();
 
-        return view('edit');
-    }
+        return view('edit', ['news' => $news]);
+   }
 
     /**
      * Display the specified resource.
@@ -49,7 +52,7 @@ class EditController extends Controller
      */
     public function show($id)
     {
-        return view('headline', ['news' => berita::find($id)]);
+        return view('edit', ['selectedNews' => berita::find($id)]);
     }
 
     /**
@@ -61,7 +64,21 @@ class EditController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'judul_berita'  => 'required',
+            'jenis_berita'  => 'required',
+            'judul1'        => 'required',
+            'isi1'          => 'required',
+            'judul2'        => 'nullable',
+            'isi2'          => 'nullable',
+            'judul3'        => 'nullable',
+            'isi3'          => 'nullable',
+        ]);
+
+        $beritaDipilih = berita::findOrFail($id);  
+        $beritaDipilih->update($validatedData);
+        return route('search.show');
+
     }
 
     /**

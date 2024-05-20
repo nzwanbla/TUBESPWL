@@ -154,7 +154,7 @@
         }
 
 
-        #push{
+        #search{
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -193,53 +193,31 @@
     </div>
 
 
-    <form id="editor-form" method="POST" action="{{ route('edit.update', ['id' => $selectedNews->id] ) }}">
+    <form id="editor-form" method="POST" action="{{ route('search.run') }}">
         <!-- CSRF Token -->
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
         <div class="horizontal-group" >
             <div class="form-group" id="judul">
                 <label for="judul_berita">Judul Berita</label>
-                <input type="text" id="judul_berita" name="judul_berita" value="{{ $selectedNews->judul_berita ?? '' }}"  >
+                <select id="judul_berita" name="id">
+                    @foreach ($news as $new)
+                    <option value="{{ $new->id }}">  {{ $new->judul_berita }}   </option>
+                    @endforeach
+                </select>
             </div>
 
-            <div class="form-group" id="jenis">
-                <label for="jenis_berita">Jenis Berita</label>
-                <input type="text" id="jenis_berita" name="jenis_berita" value="{{ $selectedNews->jenis_berita ?? '' }}">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="judul1">Judul 1</label>
-            <input type="text" id="judul1" name="judul1" value="{{ $selectedNews->judul1 ?? '' }}"  >
-        </div>
-
-        <div class="form-group">
-            <label for="isi1">Isi 1</label>
-            <textarea id="isi1" name="isi1" rows="3" >{{ $selectedNews->isi1 ?? '' }}</textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="judul2">Judul 2</label>
-            <input type="text" id="judul2" name="judul2" value="{{ $selectedNews->judul2 ?? '' }}">
-        </div>
-
-        <div class="form-group">
-            <label for="isi2">Isi 2</label>
-            <textarea id="isi2" name="isi2" rows="3" >{{ $selectedNews->isi2 ?? '' }}</textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="judul3">Judul 3</label>
-            <input type="text" id="judul3" name="judul3" value="{{ $selectedNews->judul3 ?? '' }}">
-        </div>
-
-        <div class="form-group">
-            <label for="isi3">Isi 3</label>
-            <textarea id="isi3" name="isi3" rows="3" >{{ $selectedNews->isi3 ?? '' }}</textarea>
-        </div>
-
-        <button id="push" type="push">Update</button>
+        <button id="search" type="search">Search</button>
     </form>
+
+    {{-- <script>
+        function updateFormAction(selectElement) {
+            var selectedOption = selectElement.options[selectElement.selectedIndex];
+            var form = document.getElementById('editor-form');
+            var id = selectedOption.value;
+            form.action = "{{ url('api/edit') }}/" + id;
+        }
+    </script> --}}
 </body>
+
 </html>

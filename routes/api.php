@@ -7,6 +7,8 @@ use app\models\berita;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CreateController;
 use App\Http\Controllers\EditController;
+use App\Http\Controllers\SearchController;
+
 
 //welcome page route
 Route::get('/', [WelcomeController::class, 'welcome'])->name('headline.show');  
@@ -21,10 +23,15 @@ Route::get('news/{id}', [WelcomeController::class, 'show'])->name('news.show');
 Route::get('create', [CreateController::class, 'index'])->name('create.show');
 Route::post('create', [CreateController::class, 'store'])->name('create.store');
 
-//Route for edit news
-Route::get('edit', [EditController::class, 'index'])->name('edit.show');
-Route::post('edit', [EditController::class, 'store'])->name('edit.store');
-// Route::post('edit', [EditController::class, 'show'])->name('edit.view');
+//Route for edit page
+Route::get('edit/{id}', [EditController::class, 'show'])->name('edit.show');
+Route::post('edit/{id}', [EditController::class, 'update'])->name('edit.update');
+
+//route for editing picked article
+Route::get('search', [SearchController::class, 'index'])->name('search.show');
+Route::post('search', [SearchController::class, 'store'])->name('search.run');
+
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

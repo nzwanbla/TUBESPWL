@@ -9,7 +9,7 @@
 <body>
     @foreach ($news as $new)
     <a href="{{ route('news.show', ['id' => $new->id]) }}">{{ $new ['judul_berita']}}</a>
-        <hr>
+        <hr> 
         <hr>
     @endforeach
 
