@@ -1,30 +1,23 @@
 <!DOCTYPE html>
-<!-- saved from url=(0054)https://demo.bootstrapdash.com/world-vision/index.html -->
+
 <html lang="zxx">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- Required meta tags -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>World Vision</title>
     <!-- plugin css for this page -->
-    <link
-      rel="stylesheet"
-      href="./World Vision_files/materialdesignicons.min.css"
-    />
-    <link rel="stylesheet" href="./World Vision_files/aos.css" />
-    <link rel="stylesheet" href="./World Vision_files/owl.carousel.min.css" />
-    <link
-      rel="stylesheet"
-      href="./World Vision_files/owl.theme.default.min.css"
-    />
+    <link rel="stylesheet" href="{{ url('/css/materialdesignicons.min.css') }}" />
+    <link rel="stylesheet" href="{{ url('/css/aos.css') }}" />
+    <link rel="stylesheet" href="{{ url('/css/owl.carousel.min.css') }}" />
+    <link rel="stylesheet" href="{{ url('/css/owl.theme.default.min.css') }}"/>
     <!-- End plugin css for this page -->
-    <link
-      rel="shortcut icon"
-      href="https://demo.bootstrapdash.com/world-vision/assets/images/favicon.png"
+    <link rel="shortcut icon" href="https://demo.bootstrapdash.com/world-vision/assets/images/favicon.png"
     />
     <!-- inject:css -->
-    <link rel="stylesheet" href="{{ url('./css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url('/css/style.css') }}" />
     <!-- endinject -->
   </head>
 
@@ -46,11 +39,19 @@
                   <li>Wed, March 4, 2020</li>
                   <!-- PLACE for date -->
                 </ul>
+                <ul class="center">
+                  <h1>Web Berita</h1>
+                  <!-- PLACE for date -->
+                </ul>
+                <ul class="navbar-right">
+                  <li>Login</li>
+                  <li>Register</li>
+                </ul>
                 <div>
                   <a
                     class="navbar-brand"
-                    href="https://demo.bootstrapdash.com/world-vision/index.html#"
-                    ><img src="./World Vision_files/logo.svg" alt=""
+                    href=""
+                    ><img src="{{ url('/images/logo.svg ') }}" alt=""
                   /></a>
                 </div>
                 <div class="d-flex">
@@ -162,405 +163,152 @@
         </header>
         <div class="container">
           <div class="banner-top-thumb-wrap">
-            <div class="d-lg-flex justify-content-between align-items-center">
-              <div class="d-flex justify-content-between mb-3 mb-lg-0">
-                <div>
-                  <img
-                    src="./World Vision_files/star-magazine-1.jpg"
-                    alt="thumb"
-                    class="banner-top-thumb"
-                  />
+            <div class="row">
+              <div class="col-lg-12">
+                <div
+                  class="owl-carousel owl-theme owl-loaded owl-drag"
+                  id="main-banner-carousel"
+                >
+                  <div class="owl-stage-outer">
+                    <div
+                      class="owl-stage"
+                      style="
+                        transform: translate3d(-2919px, 0px, 0px);
+                        transition: all 2s ease 0s;
+                        width: 5840px;
+                      "
+                    >
+                      <div class="owl-item" style="width: 729.995px">
+                        <div class="item">
+                          <div class="carousel-content-wrapper mb-2">
+                            <div class="carousel-content">
+                              <h1 class="font-weight-bold">
+                                If you wanted to get rich, how would you do it?
+                              </h1>
+                              <h5 class="font-weight-normal m-0">
+                                Lorem Ipsum has been the industry's standard
+                              </h5>
+                              <p
+                                class="text-color m-0 pt-2 d-flex align-items-center"
+                              >
+                                <span class="fs-10 mr-1">2 hours ago</span>
+                                <i class="mdi mdi-bookmark-outline mr-3"></i>
+                                <span class="fs-10 mr-1">126</span>
+                                <i class="mdi mdi-comment-outline"></i>
+                              </p>
+                            </div>
+                            <div class="carousel-image">
+                              <img src="{{ url('/images/banner.jpg ') }}" alt="" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="owl-item" style="width: 729.995px">
+                        <div class="item">
+                          <div class="carousel-content-wrapper mb-2">
+                            <div class="carousel-content">
+                              <h1 class="font-weight-bold">
+                                If you wanted to get rich, how would you do it?
+                              </h1>
+                              <h5 class="font-weight-normal m-0">
+                                Lorem Ipsum has been the industry's standard
+                              </h5>
+                              <p
+                                class="text-color m-0 pt-2 d-flex align-items-center"
+                              >
+                                <span class="fs-10 mr-1">2 hours ago</span>
+                                <i class="mdi mdi-bookmark-outline mr-3"></i>
+                                <span class="fs-10 mr-1">126</span>
+                                <i class="mdi mdi-comment-outline"></i>
+                              </p>
+                            </div>
+                            <div class="carousel-image">
+                              <img
+                                src="{{ url('/images/banner_1.jpg ') }}"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="owl-item" style="width: 729.995px">
+                        <div class="item">
+                          <div class="carousel-content-wrapper mb-2">
+                            <div class="carousel-content">
+                              <h1 class="font-weight-bold">
+                                If you wanted to get rich, how would you do it?
+                              </h1>
+                              <h5 class="font-weight-normal m-0">
+                                Lorem Ipsum has been the industry's standard
+                              </h5>
+                              <p
+                                class="text-color m-0 pt-2 d-flex align-items-center"
+                              >
+                                <span class="fs-10 mr-1">2 hours ago</span>
+                                <i class="mdi mdi-bookmark-outline mr-3"></i>
+                                <span class="fs-10 mr-1">126</span>
+                                <i class="mdi mdi-comment-outline"></i>
+                              </p>
+                            </div>
+                            <div class="carousel-image">
+                              <img
+                                src="{{ url('/images/banner_2.jpg ') }}"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="owl-item" style="width: 729.995px">
+                        <div class="item">
+                          <div class="carousel-content-wrapper mb-2">
+                            <div class="carousel-content">
+                              <h1 class="font-weight-bold">
+                                If you wanted to get rich, how would you do it?
+                              </h1>
+                              <h5 class="font-weight-normal m-0">
+                                Lorem Ipsum has been the industry's standard
+                              </h5>
+                              <p
+                                class="text-color m-0 pt-2 d-flex align-items-center"
+                              >
+                                <span class="fs-10 mr-1">2 hours ago</span>
+                                <i class="mdi mdi-bookmark-outline mr-3"></i>
+                                <span class="fs-10 mr-1">126</span>
+                                <i class="mdi mdi-comment-outline"></i>
+                              </p>
+                            </div>
+                            <div class="carousel-image">
+                              <img
+                                src="{{ url('/images/banner_3.jpg ') }}"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="owl-nav disabled">
+                    <button type="button" role="presentation" class="owl-prev">
+                      <span aria-label="Previous">‹</span></button
+                    ><button type="button" role="presentation" class="owl-next">
+                      <span aria-label="Next">›</span>
+                    </button>
+                  </div>
+                  <div class="owl-dots">
+                    <button role="button" class="owl-dot"><span></span></button
+                    ><button role="button" class="owl-dot"><span></span></button
+                    ><button role="button" class="owl-dot">
+                      <span></span></button
+                    ><button role="button" class="owl-dot"><span></span></button>
+                  </div>
                 </div>
-                <h5 class="m-0 font-weight-bold">
-                  The morning after: What people
-                </h5>
               </div>
-              <div class="d-flex justify-content-between mb-3 mb-lg-0">
-                <div>
-                  <img
-                    src="./World Vision_files/star-magazine-2.jpg"
-                    alt="thumb"
-                    class="banner-top-thumb"
-                  />
-                </div>
-                <h5 class="m-0 font-weight-bold">How Hungary produced the</h5>
-              </div>
-              <div class="d-flex justify-content-between mb-3 mb-lg-0">
-                <div>
-                  <img
-                    src="./World Vision_files/star-magazine-3.jpg"
-                    alt="thumb"
-                    class="banner-top-thumb"
-                  />
-                </div>
-                <h5 class="m-0 font-weight-bold">
-                  A sleepy island paradise's most
-                </h5>
-              </div>
-              <div class="d-flex justify-content-between mb-3 mb-lg-0">
-                <div>
-                  <img
-                    src="./World Vision_files/star-magazine-4.jpg"
-                    alt="thumb"
-                    class="banner-top-thumb"
-                  />
-                </div>
-                <h5 class="m-0 font-weight-bold">
-                  America's most popular national
-                </h5>
-              </div>
+
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-8">
-              <div
-                class="owl-carousel owl-theme owl-loaded owl-drag"
-                id="main-banner-carousel"
-              >
-                <div class="owl-stage-outer">
-                  <div
-                    class="owl-stage"
-                    style="
-                      transform: translate3d(-2919px, 0px, 0px);
-                      transition: all 2s ease 0s;
-                      width: 5840px;
-                    "
-                  >
-                    <div class="owl-item cloned" style="width: 729.995px">
-                      <div class="item">
-                        <div class="carousel-content-wrapper mb-2">
-                          <div class="carousel-content">
-                            <h1 class="font-weight-bold">
-                              If you wanted to get rich, how would you do it?
-                            </h1>
-                            <h5 class="font-weight-normal m-0">
-                              Lorem Ipsum has been the industry's standard
-                            </h5>
-                            <p
-                              class="text-color m-0 pt-2 d-flex align-items-center"
-                            >
-                              <span class="fs-10 mr-1">2 hours ago</span>
-                              <i class="mdi mdi-bookmark-outline mr-3"></i>
-                              <span class="fs-10 mr-1">126</span>
-                              <i class="mdi mdi-comment-outline"></i>
-                            </p>
-                          </div>
-                          <div class="carousel-image">
-                            <img
-                              src="./World Vision_files/banner_2.jpg"
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 729.995px">
-                      <div class="item">
-                        <div class="carousel-content-wrapper mb-2">
-                          <div class="carousel-content">
-                            <h1 class="font-weight-bold">
-                              If you wanted to get rich, how would you do it?
-                            </h1>
-                            <h5 class="font-weight-normal m-0">
-                              Lorem Ipsum has been the industry's standard
-                            </h5>
-                            <p
-                              class="text-color m-0 pt-2 d-flex align-items-center"
-                            >
-                              <span class="fs-10 mr-1">2 hours ago</span>
-                              <i class="mdi mdi-bookmark-outline mr-3"></i>
-                              <span class="fs-10 mr-1">126</span>
-                              <i class="mdi mdi-comment-outline"></i>
-                            </p>
-                          </div>
-                          <div class="carousel-image">
-                            <img
-                              src="./World Vision_files/banner_3.jpg"
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="owl-item" style="width: 729.995px">
-                      <div class="item">
-                        <div class="carousel-content-wrapper mb-2">
-                          <div class="carousel-content">
-                            <h1 class="font-weight-bold">
-                              If you wanted to get rich, how would you do it?
-                            </h1>
-                            <h5 class="font-weight-normal m-0">
-                              Lorem Ipsum has been the industry's standard
-                            </h5>
-                            <p
-                              class="text-color m-0 pt-2 d-flex align-items-center"
-                            >
-                              <span class="fs-10 mr-1">2 hours ago</span>
-                              <i class="mdi mdi-bookmark-outline mr-3"></i>
-                              <span class="fs-10 mr-1">126</span>
-                              <i class="mdi mdi-comment-outline"></i>
-                            </p>
-                          </div>
-                          <div class="carousel-image">
-                            <img src="./World Vision_files/banner.jpg" alt="" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="owl-item" style="width: 729.995px">
-                      <div class="item">
-                        <div class="carousel-content-wrapper mb-2">
-                          <div class="carousel-content">
-                            <h1 class="font-weight-bold">
-                              If you wanted to get rich, how would you do it?
-                            </h1>
-                            <h5 class="font-weight-normal m-0">
-                              Lorem Ipsum has been the industry's standard
-                            </h5>
-                            <p
-                              class="text-color m-0 pt-2 d-flex align-items-center"
-                            >
-                              <span class="fs-10 mr-1">2 hours ago</span>
-                              <i class="mdi mdi-bookmark-outline mr-3"></i>
-                              <span class="fs-10 mr-1">126</span>
-                              <i class="mdi mdi-comment-outline"></i>
-                            </p>
-                          </div>
-                          <div class="carousel-image">
-                            <img
-                              src="./World Vision_files/banner_1.jpg"
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="owl-item active" style="width: 729.995px">
-                      <div class="item">
-                        <div class="carousel-content-wrapper mb-2">
-                          <div class="carousel-content">
-                            <h1 class="font-weight-bold">
-                              If you wanted to get rich, how would you do it?
-                            </h1>
-                            <h5 class="font-weight-normal m-0">
-                              Lorem Ipsum has been the industry's standard
-                            </h5>
-                            <p
-                              class="text-color m-0 pt-2 d-flex align-items-center"
-                            >
-                              <span class="fs-10 mr-1">2 hours ago</span>
-                              <i class="mdi mdi-bookmark-outline mr-3"></i>
-                              <span class="fs-10 mr-1">126</span>
-                              <i class="mdi mdi-comment-outline"></i>
-                            </p>
-                          </div>
-                          <div class="carousel-image">
-                            <img
-                              src="./World Vision_files/banner_2.jpg"
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="owl-item" style="width: 729.995px">
-                      <div class="item">
-                        <div class="carousel-content-wrapper mb-2">
-                          <div class="carousel-content">
-                            <h1 class="font-weight-bold">
-                              If you wanted to get rich, how would you do it?
-                            </h1>
-                            <h5 class="font-weight-normal m-0">
-                              Lorem Ipsum has been the industry's standard
-                            </h5>
-                            <p
-                              class="text-color m-0 pt-2 d-flex align-items-center"
-                            >
-                              <span class="fs-10 mr-1">2 hours ago</span>
-                              <i class="mdi mdi-bookmark-outline mr-3"></i>
-                              <span class="fs-10 mr-1">126</span>
-                              <i class="mdi mdi-comment-outline"></i>
-                            </p>
-                          </div>
-                          <div class="carousel-image">
-                            <img
-                              src="./World Vision_files/banner_3.jpg"
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 729.995px">
-                      <div class="item">
-                        <div class="carousel-content-wrapper mb-2">
-                          <div class="carousel-content">
-                            <h1 class="font-weight-bold">
-                              If you wanted to get rich, how would you do it?
-                            </h1>
-                            <h5 class="font-weight-normal m-0">
-                              Lorem Ipsum has been the industry's standard
-                            </h5>
-                            <p
-                              class="text-color m-0 pt-2 d-flex align-items-center"
-                            >
-                              <span class="fs-10 mr-1">2 hours ago</span>
-                              <i class="mdi mdi-bookmark-outline mr-3"></i>
-                              <span class="fs-10 mr-1">126</span>
-                              <i class="mdi mdi-comment-outline"></i>
-                            </p>
-                          </div>
-                          <div class="carousel-image">
-                            <img src="./World Vision_files/banner.jpg" alt="" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 729.995px">
-                      <div class="item">
-                        <div class="carousel-content-wrapper mb-2">
-                          <div class="carousel-content">
-                            <h1 class="font-weight-bold">
-                              If you wanted to get rich, how would you do it?
-                            </h1>
-                            <h5 class="font-weight-normal m-0">
-                              Lorem Ipsum has been the industry's standard
-                            </h5>
-                            <p
-                              class="text-color m-0 pt-2 d-flex align-items-center"
-                            >
-                              <span class="fs-10 mr-1">2 hours ago</span>
-                              <i class="mdi mdi-bookmark-outline mr-3"></i>
-                              <span class="fs-10 mr-1">126</span>
-                              <i class="mdi mdi-comment-outline"></i>
-                            </p>
-                          </div>
-                          <div class="carousel-image">
-                            <img
-                              src="./World Vision_files/banner_1.jpg"
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="owl-nav disabled">
-                  <button type="button" role="presentation" class="owl-prev">
-                    <span aria-label="Previous">‹</span></button
-                  ><button type="button" role="presentation" class="owl-next">
-                    <span aria-label="Next">›</span>
-                  </button>
-                </div>
-                <div class="owl-dots">
-                  <button role="button" class="owl-dot"><span></span></button
-                  ><button role="button" class="owl-dot"><span></span></button
-                  ><button role="button" class="owl-dot active">
-                    <span></span></button
-                  ><button role="button" class="owl-dot"><span></span></button>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="py-3 border-bottom">
-                    <div class="d-flex align-items-center pb-2">
-                      <img
-                        src="./World Vision_files/Profile_1.jpg"
-                        class="img-xs img-rounded mr-2"
-                        alt="thumb"
-                      />
-                      <span class="fs-12 text-muted">Henry Itondo</span>
-                    </div>
-                    <p class="fs-14 m-0 font-weight-medium line-height-sm">
-                      The Most And Least Visited Countries In The World
-                    </p>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="py-3 border-bottom">
-                    <div class="d-flex align-items-center pb-2">
-                      <img
-                        src="./World Vision_files/Profile_2.jpg"
-                        class="img-xs img-rounded mr-2"
-                        alt="thumb"
-                      />
-                      <span class="fs-12 text-muted">Oka Tomoaki</span>
-                    </div>
-                    <p class="fs-14 m-0 font-weight-medium line-height-sm">
-                      The Best Places to Travel in month August
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="pt-4 pb-4 border-bottom">
-                    <div class="d-flex align-items-center pb-2">
-                      <img
-                        src="./World Vision_files/Profile_2.jpg"
-                        class="img-xs img-rounded mr-2"
-                        alt="thumb"
-                      />
-                      <span class="fs-12 text-muted">Joana Leite</span>
-                    </div>
-                    <p class="fs-14 m-0 font-weight-medium line-height-sm">
-                      Focus On Fun And Challenging Lifetime Activities
-                    </p>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="pt-3 pb-4 border-bottom">
-                    <div class="d-flex align-items-center pb-2">
-                      <img
-                        src="./World Vision_files/Profile_4.jpg"
-                        class="img-xs img-rounded mr-2"
-                        alt="thumb"
-                      />
-                      <span class="fs-12 text-muted">Rita Leite</span>
-                    </div>
-                    <p class="fs-14 m-0 font-weight-medium line-height-sm">
-                      Bread Is The Most Widely Consumed Food In The World
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="pt-4 pb-4">
-                    <div class="d-flex align-items-center pb-2">
-                      <img
-                        src="./World Vision_files/Profile_5.jpg"
-                        class="img-xs img-rounded mr-2"
-                        alt="thumb"
-                      />
-                      <span class="fs-12 text-muted">Jurrien Oldhof</span>
-                    </div>
-                    <p class="fs-14 m-0 font-weight-medium line-height-sm">
-                      What Is Music, And What Does It Mean To Us
-                    </p>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="pt-3 pb-4">
-                    <div class="d-flex align-items-center pb-2">
-                      <img
-                        src="./World Vision_files/Profile_6.jpg"
-                        class="img-xs img-rounded mr-2"
-                        alt="thumb"
-                      />
-                      <span class="fs-12 text-muted">Yamaha Toshinobu</span>
-                    </div>
-                    <p class="fs-14 m-0 font-weight-medium line-height-sm">
-                      Is Breakfast The Most Important Meal Of The Day
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
           <div class="world-news">
             <div class="row">
               <div class="col-sm-12">
@@ -573,7 +321,7 @@
               <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="./World Vision_files/travel.jpg"
+                    src="{{ url('/images/travel.jpg ') }}"
                     class="img-fluid"
                     alt="world-news"
                   />
@@ -586,7 +334,7 @@
                   Lorem Ipsum has been the industry's standard dummy text
                 </p>
                 <a
-                  href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                  href=""
                   class="font-weight-bold text-dark pt-2"
                   >Read Article</a
                 >
@@ -594,7 +342,7 @@
               <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="./World Vision_files/news.jpg"
+                    src="{{ url('/images/news.jpg ') }}"
                     class="img-fluid"
                     alt="world-news"
                   />
@@ -607,7 +355,7 @@
                   Lorem Ipsum has been the industry's standard dummy text
                 </p>
                 <a
-                  href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                  href=""
                   class="font-weight-bold text-dark pt-2"
                   >Read Article</a
                 >
@@ -615,7 +363,7 @@
               <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="./World Vision_files/art.jpg"
+                    src="{{ url('/images/art.jpg ') }}"
                     class="img-fluid"
                     alt="world-news"
                   />
@@ -628,7 +376,7 @@
                   Lorem Ipsum has been the industry's standard dummy text
                 </p>
                 <a
-                  href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                  href=""
                   class="font-weight-bold text-dark pt-2"
                   >Read Article</a
                 >
@@ -636,7 +384,7 @@
               <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="./World Vision_files/business.jpg"
+                    src="{{ url('/images/business.jpg ') }}"
                     class="img-fluid"
                     alt="world-news"
                   />
@@ -649,7 +397,7 @@
                   Lorem Ipsum has been the industry's standard dummy text
                 </p>
                 <a
-                  href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                  href=""
                   class="font-weight-bold text-dark pt-2"
                   >Read Article</a
                 >
@@ -668,7 +416,7 @@
               <div class="col-lg-6 mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="./World Vision_files/glob.jpg"
+                    src="{{ url('/images/glob.jpg ') }}"
                     class="img-fluid"
                     alt="world-news"
                   />
@@ -688,7 +436,7 @@
                   <div class="col-sm-6 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="./World Vision_files/star-magazine-5.jpg"
+                        src="{{ url('/images/star-magazine-5.jpg ') }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -704,7 +452,7 @@
                   <div class="col-sm-6 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="./World Vision_files/star-magazine-6.jpg"
+                        src="{{ url('/images/star-magazine-6.jpg ') }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -722,7 +470,7 @@
                   <div class="col-sm-6 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="./World Vision_files/star-magazine-7.jpg"
+                        src="{{ url('/images/star-magazine-7.jpg ') }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -738,7 +486,7 @@
                   <div class="col-sm-6">
                     <div class="position-relative image-hover">
                       <img
-                        src="./World Vision_files/star-magazine-8.jpg"
+                        src="{{ url('/images/star-magazine-8.jpg ') }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -769,7 +517,7 @@
                   <div class="col-sm-4 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="./World Vision_files/star-magazine-9.jpg"
+                        src="{{ url('/images/star-magazine-9.jpg ') }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -782,7 +530,7 @@
                   <div class="col-sm-4 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="./World Vision_files/star-magazine-10.jpg"
+                        src="{{ url('/images/star-magazine-10.jpg ') }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -795,7 +543,7 @@
                   <div class="col-sm-4 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="./World Vision_files/star-magazine-11.jpg"
+                        src="{{ url('/images/star-magazine-11.jpg ') }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -810,7 +558,7 @@
                   <div class="col-sm-4 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="./World Vision_files/star-magazine-12.jpg"
+                        src="{{ url('/images/star-magazine-12.jpg ') }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -823,7 +571,7 @@
                   <div class="col-sm-4 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="./World Vision_files/star-magazine-13.jpg"
+                        src="{{ url('/images/star-magazine-13.jpg ') }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -836,7 +584,7 @@
                   <div class="col-sm-4 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="./World Vision_files/star-magazine-14.jpg"
+                        src="{{ url('/images/star-magazine-14.jpg ') }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -850,14 +598,6 @@
               </div>
               <div class="col-lg-3">
                 <div class="position-relative mb-3">
-                  <img
-                    src="./World Vision_files/star-magazine-15.jpg"
-                    class="img-fluid"
-                    alt="world-news"
-                  />
-                  <div class="video-thumb text-muted">
-                    <span><i class="mdi mdi-menu-right"></i></span>LIVE
-                  </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12">
@@ -994,7 +734,7 @@
                   </li>
                   <li>
                     <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                      href=""
                       >Magazine</a
                     >
                   </li>
@@ -1022,19 +762,19 @@
                 <ul class="footer-vertical-nav">
                   <li class="menu-title">
                     <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                      href=""
                       >Features</a
                     >
                   </li>
                   <li>
                     <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                      href=""
                       >Photography</a
                     >
                   </li>
                   <li>
                     <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                      href=""
                       >Video</a
                     >
                   </li>
@@ -1046,19 +786,19 @@
                   </li>
                   <li>
                     <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                      href=""
                       >Live Events</a
                     >
                   </li>
                   <li>
                     <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                      href=""
                       >Stores</a
                     >
                   </li>
                   <li>
                     <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                      href=""
                       >Jobs</a
                     >
                   </li>
@@ -1068,31 +808,31 @@
                 <ul class="footer-vertical-nav">
                   <li class="menu-title">
                     <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                      href=""
                       >More</a
                     >
                   </li>
                   <li>
                     <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                      href=""
                       >RSS</a
                     >
                   </li>
                   <li>
                     <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                      href=""
                       >FAQ</a
                     >
                   </li>
                   <li>
                     <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                      href=""
                       >User Agreement</a
                     >
                   </li>
                   <li>
                     <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                      href=""
                       >Privacy</a
                     >
                   </li>
@@ -1115,7 +855,7 @@
               <div class="col-sm-12">
                 <div class="d-flex justify-content-between">
                   <img
-                    src="./World Vision_files/logo.svg"
+                    src="{{ url('/images/logo.svg ') }}"
                     class="footer-logo"
                     alt=""
                   />
@@ -1132,43 +872,43 @@
                   <ul class="footer-horizontal-menu">
                     <li>
                       <a
-                        href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                        href=""
                         >Terms of Use.</a
                       >
                     </li>
                     <li>
                       <a
-                        href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                        href=""
                         >Privacy Policy.</a
                       >
                     </li>
                     <li>
                       <a
-                        href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                        href=""
                         >Accessibility &amp; CC.</a
                       >
                     </li>
                     <li>
                       <a
-                        href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                        href=""
                         >AdChoices.</a
                       >
                     </li>
                     <li>
                       <a
-                        href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                        href=""
                         >Advertise with us Transcripts.</a
                       >
                     </li>
                     <li>
                       <a
-                        href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                        href=""
                         >License.</a
                       >
                     </li>
                     <li>
                       <a
-                        href="https://demo.bootstrapdash.com/world-vision/index.html#"
+                        href=""
                         >Sitemap</a
                       >
                     </li>
@@ -1183,44 +923,14 @@
       </div>
     </div>
     <!-- inject:js -->
-    <script src="./World Vision_files/vendor.bundle.base.js.download"></script>
+    <script  src="{{ url('/js/vendor.bundle.base.js') }}"></script>
     <!-- endinject -->
     <!-- plugin js for this page -->
-    <script src="./World Vision_files/owl.carousel.min.js.download"></script>
+    <script  src="{{ url('/js/owl.carousel.min.js') }}"></script>
     <!-- End plugin js for this page -->
     <!-- Custom js for this page-->
-    <script src="./World Vision_files/demo.js.download"></script>
+    <script  src="{{ url('/js/demo.js') }}"></script>
     <!-- End custom js for this page-->
   </body>
-  <grammarly-desktop-integration data-grammarly-shadow-root="true"
-    ><template shadowrootmode="open"
-      ><style>
-        div.grammarly-desktop-integration {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0, 0, 0, 0);
-          white-space: nowrap;
-          border: 0;
-          -moz-user-select: none;
-          -webkit-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-        }
 
-        div.grammarly-desktop-integration:before {
-          content: attr(data-content);
-        }
-      </style>
-      <div
-        aria-label="grammarly-integration"
-        role="group"
-        tabindex="-1"
-        class="grammarly-desktop-integration"
-        data-content='{"mode":"limited","isActive":false,"isUserDisabled":false}'
-      ></div></template
-  ></grammarly-desktop-integration>
 </html>

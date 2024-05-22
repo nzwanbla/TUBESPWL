@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-class LoginController extends Controller
-{
+class RegisterController extends Controller
+{ 
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +17,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('login');
+        return view('register');
     }
 
     /**
@@ -28,22 +28,23 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:user',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
 
-        if (!Auth::attempt($credentials)) {
-            return response()->json(['message' => 'Invalid credentials'], 401);
-        } 
-
-        $user = Auth::user();
-        $token = $user->createToken('authToken')->plainTextToken;
-
-        if ($request->expectsJson()) {
-            return response()->json(['token' => $token]);
-        } else {
-            session(['auth_token' => $token]);
-            return redirect()->route('headline.show');
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
         }
-    
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        return view('login');
     }
 
     /**
@@ -78,5 +79,5 @@ class LoginController extends Controller
     public function destroy($id)
     {
         //
-    } 
+    }
 }
