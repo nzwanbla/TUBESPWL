@@ -3,112 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-image: url("path/to/your/background.jpg");  /* Replace with your background image path */
-      background-size: cover;
-      background-position: center;
-    }
-
-    .login-form {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      width: 400px;  /* Set a width for the form */
-      transition: all 0.3s ease-in-out;  /* Add smooth transition effects */
-    }
-
-    .login-form:hover {
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);  /* Enhance shadow on hover */
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;  /* Set a color for the heading */
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-      color: #333;  /* Set a color for labels */
-    }
-
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      margin-bottom: 15px;
-      transition: all 0.3s ease-in-out;  /* Add transition effects for inputs */
-    }
-
-    input[type="text"]:focus,
-    input[type="password"]:focus {
-      outline: none;  /* Remove default outline on focus */
-      border-color: #4CAF50;  /* Change border color on focus */
-    }
-
-    button[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-    }
-
-    button[type="submit"]:hover {
-      opacity: 0.8;
-    }
-
-    .links {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .links a {
-      color: #4CAF50;
-      text-decoration: none;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .links a:hover {
-      color: #2e8b57;  /* Change link color on hover */
-    }
-  </style>
+  <title>NEWSIGHT - Register</title>
+  @vite('public/css/tailwind.css')
 </head>
 <body>
-  <div class="login-form">
-    <h1>Login</h1>
-    <form method="POST" action="{{ route('register.run') }}">
-      
-      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+  @include('components.guest-navbar')
+  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+      <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+      <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Register New Account</h2>
+    </div>
   
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <form class="space-y-6" id="register-form" method="POST" action="">
+        @csrf
+        <input type="hidden" name="_method" id="form-method" value="POST">
+        <div>
+          <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
+          <div class="mt-2">
+            <input id="name" name="name" type="name" autocomplete="name" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          </div>
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+          <div class="mt-2">
+            <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          </div>
+        </div>
   
-      <label for="email">Email:</label>
-      <input type="text" id="email" name="email" required>
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>  
+          </div>
+          <div class="mt-2">
+            <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="password_confirmation" class="block text-sm font-medium leading-6 text-gray-900">Confirm Password</label>  
+          </div>
+          <div class="mt-2">
+            <input id="password_confirmation" name="password_confirmation" type="password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          </div>
+        </div>
   
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+        <div>
+          <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Login</button>
+        </div>
+      </form>
   
-      <label for="password_confirmation">Confirm Password:</label>
-      <input type="password" id="password_confirmation" name="password_confirmation" required>
-  
-      <button type="submit">Register</button>
-  </form>
-  
+      <p class="mt-10 text-center text-sm text-gray-500">
+        I have an account
+        <a href="{{ route('login.show') }}" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Login</a>
+      </p>
+    </div>
   </div>
+
+
+  @include('components.footer')
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </body>
 </html>
