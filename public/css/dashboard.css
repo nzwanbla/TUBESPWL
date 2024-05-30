@@ -1,0 +1,95 @@
+#table-container{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#table-container table {
+  table-layout: fixed; /* Enable fixed column widths */
+  width: 100%; /* Set desired table width */
+}
+
+#table-container table thead th {
+  position: sticky; /* Fix headers to the left */
+  top: 0; /* Position headers at the top */
+  left: 0; /* Align headers to the left */
+  background-color: #fff; /* Optional: Set background color for contrast */
+  z-index: 2; /* Ensure headers stay on top during scrolling */
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.slider {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    background-color: #ddd;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.slider input {
+    display: none;
+}
+
+.slider-option {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#edit:checked ~ .slider-button {
+    transform: translateX(100%);
+}
+
+.slider-button {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 90px;
+    height: 40px;
+    background-color: #007bff;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#edit:checked ~ .slider-option[for="create"] {
+    color: #666;
+}
+
+#edit:checked ~ .slider-option[for="edit"] {
+    color: #fff;
+}
+
+#edit:checked ~ .slider-button {
+    background-color: #28a745;
+}
+
+.slider-option[for="create"] {
+    left: 5px;
+}
+
+.slider-option[for="edit"] {
+    right: 5px;
+}
+.horizontal-group {
+    display: flex;
+    gap: 4%; 
+}

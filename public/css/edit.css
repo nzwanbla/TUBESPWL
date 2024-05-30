@@ -1,0 +1,148 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.slider {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    background-color: #ddd;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.slider input {
+    display: none;
+}
+
+.slider-option {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#edit:checked ~ .slider-button {
+    transform: translateX(100%);
+}
+
+.slider-button {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 90px;
+    height: 40px;
+    background-color: #007bff;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#edit:checked ~ .slider-option[for="create"] {
+    color: #666;
+}
+
+#edit:checked ~ .slider-option[for="edit"] {
+    color: #fff;
+}
+
+#edit:checked ~ .slider-button {
+    background-color: #28a745;
+}
+
+.slider-option[for="create"] {
+    left: 5px;
+}
+
+.slider-option[for="edit"] {
+    right: 5px;
+}
+.horizontal-group {
+    display: flex;
+    gap: 4%; 
+}
+
+#editor-form{
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.form-row .form-group {
+    flex: 1;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+
+
+
+textarea {
+    resize: both; 
+    overflow: auto; 
+    max-width: 100%;  
+}
+#judul, #jenis{
+    min-width: 48%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#buttons{
+    display: flex;
+    text-align: center;
+}
+
+#post{
+    background-color: #007bff; /* Blue background color */
+}
+
+#delete{
+    background-color: #ab2727; /* Blue background color */
+}
+
+#delete, #post{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    padding: 10px 20px; /* Add padding for space inside the button */
+    font-size: 16px; /* Increase font size for better readability */
+    font-weight: bold; /* Make the text bold */
+    color: #fff; /* White text color */
+
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}

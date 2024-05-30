@@ -1,20 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\berita;
+use Illuminate\Http\Request; 
 
-use Illuminate\Http\Request;
-Use App\Models\berita;
 class SearchController extends Controller
 {
-    /** 
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Berita $berita)
+    public function index()
     {
-        $news = berita::all();
-        return view('search', ['news' => $news]);
+        $results = Berita::latest()->where('status', 'accept')->take(5)->get();
+
+        return view('search', 
+        ['news' => Berita::all()],
+        compact('results')
+        );
     }
 
     /**
@@ -25,8 +29,18 @@ class SearchController extends Controller
      */
     public function store(Request $request)
     {
+
+        $nama = $request->input('query');
+
+
+        $results = Berita::where('status', 'accept')
+            ->where('judul_berita', 'like', '%' . $nama . '%')
+            ->latest()
+            ->take(5)
+            ->get();
+
+        return view('search', compact('results'));
         
-        return redirect()->route('edit.show', ['id' => $request->id]);
     }
 
     /**
@@ -37,8 +51,7 @@ class SearchController extends Controller
      */
     public function show($id)
     {
-        echo $id;
-        // return redirect()->route('edit.show', ['id' => $id]);
+        //
     }
 
     /**
