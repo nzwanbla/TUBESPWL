@@ -38,8 +38,6 @@ Portal Berita, platform digital yang dirancang untuk menyediakan akses cepat dan
 
 - Fitur Pencarian : Fitur ini memungkinkan pengguna untuk menemukan berita spesifik dengan cepat.
 
-- Komentar atau saran : Fitur interaktif yang memungkinkan pengguna untuk berkomentar dan memberikan saran tentang berita yang dipublikasikan.
-
 ## Persyaratan Environment
 
 1. PHP 

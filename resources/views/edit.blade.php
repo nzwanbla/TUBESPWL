@@ -20,7 +20,7 @@
 
  
     <form id="editor-form" method="POST" action="{{ route('edit.update', ['id' => $selectedNews->id] ) }}">
-        @csrf
+        <!-- CSRF Token -->
         <input type="hidden" name="_method" id="form-method" value="POST">
 
         <div class="horizontal-group" >

@@ -15,7 +15,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
       localStorage.setItem('user-name', response.data.user_name);
 
 
-      // alert(localStorage.getItem('user-id')); 
+      alert(localStorage.getItem('user-id')); 
       
       axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`;
       const token = localStorage.getItem('app-token');

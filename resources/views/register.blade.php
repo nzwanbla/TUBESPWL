@@ -16,8 +16,6 @@
   
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form class="space-y-6" id="register-form" method="POST" action="">
-        @csrf
-        <input type="hidden" name="_method" id="form-method" value="POST">
         <div>
           <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
           <div class="mt-2">

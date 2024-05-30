@@ -43,15 +43,15 @@ class CreateController extends Controller
         if (empty($user_id)) {return response()->json(['error' => '"user_id" harus diisi.'], 422);}
 
         $validated = $request->validate([
-            'judul_berita'  => 'nullable',
-            'jenis_berita'  => 'nullable',
-            'judul1'        => 'nullable',
-            'isi1'          => 'nullable', 
+            'judul_berita'  => 'required',
+            'jenis_berita'  => 'required',
+            'judul1'        => 'required',
+            'isi1'          => 'required', 
             'judul2'        => 'nullable',
             'isi2'          => 'nullable',
             'judul3'        => 'nullable',
             'isi3'          => 'nullable',
-            'user_id'       => 'nullable',
+            'user_id'       => 'required',
         ]); 
 
         $berita = Berita::create($validated);
