@@ -69,7 +69,7 @@
 
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto">
-                            <a href="index.html" class="nav-item nav-link">Home</a>
+                            <a href="index.html" class="nav-item nav-link">Dashboard</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
                                 <div class="dropdown-menu">
@@ -96,7 +96,7 @@
         <div class="breadcrumb-wrap">
             <div class="container">
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{route('headline.show')}}">Home</a></li>  
+                    <li class="breadcrumb-item"><a href="{{route('headline.show')}}">Dashboard</a></li>  
                     <li class="breadcrumb-item active">News details</li>
                 </ul>
             </div>

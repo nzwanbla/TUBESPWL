@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>World Vision</title>
+    <title>NEWSIGHT</title>
     <!-- plugin css for this page -->
     <link rel="stylesheet" href="{{ url('/css/materialdesignicons.min.css') }}" />
     <link rel="stylesheet" href="{{ url('/css/aos.css') }}" />
@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="https://demo.bootstrapdash.com/world-vision/assets/images/favicon.png"
     />
     <!-- inject:css -->
-    <link rel="stylesheet" href="{{ url('/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url('/css/headline.css') }}" />
     <!-- endinject -->
   </head>
 
@@ -28,147 +28,20 @@
   >
     <div class="container-scroller">
       <div class="main-panel">
-        <header id="header">
-          <div class="container">
-            <!-- partial:partials/_navbar.html -->
-            <nav class="navbar navbar-expand-lg navbar-light">
-              <div
-                class="d-flex justify-content-between align-items-center navbar-top"
-              >
-                <ul class="navbar-left">
-                  <li>Wed, March 4, 2020</li>
-                  <!-- PLACE for date -->
-                </ul>
-                <ul class="center">
-                  <h1>Web Berita</h1>
-                  <!-- PLACE for date -->
-                </ul>
-                <ul class="navbar-right">
-                  <li>Login</li>
-                  <li>Register</li>
-                </ul>
-                <div>
-                  <a
-                    class="navbar-brand"
-                    href=""
-                    ><img src="{{ url('/images/logo.svg ') }}" alt=""
-                  /></a>
-                </div>
-                <div class="d-flex">
-                </div>
-              </div>
-              <div class="navbar-bottom-menu">
-                <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div
-                  class="navbar-collapse justify-content-center collapse"
-                  id="navbarSupportedContent"
-                >
-                  <ul
-                    class="navbar-nav d-lg-flex justify-content-between align-items-center"
-                  >
-                    <li>
-                      <button class="navbar-close">
-                        <i class="mdi mdi-close"></i>
-                      </button>
-                    </li>
-                    <li class="nav-item active">
-                      <a
-                        class="nav-link active"
-                        href="https://demo.bootstrapdash.com/world-vision/index.html"
-                        >Home</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/world.html"
-                        >World</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/author.html"
-                        >Magazine</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/news-post.html"
-                        >Blog</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/business.html"
-                        >Business</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/sports.html"
-                        >Sports</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/art.html"
-                        >Art</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/politics.html"
-                        >Politics</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/real-estate.html"
-                        >Real estate</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/travel.html"
-                        >Travel</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-
-            <!-- partial -->
-          </div>
-        </header>
+        @include('components.guest-navbar')
         <div class="container">
           <div class="banner-top-thumb-wrap">
             <div class="row">
+              <div id="latest" class="d-flex position-relative float-center">
+                <h3 class="section-title">Headline</h3>
+              </div>
               <div class="col-lg-12">
+                
                 <div
                   class="owl-carousel owl-theme owl-loaded owl-drag"
                   id="main-banner-carousel"
                 >
+
                   <div class="owl-stage-outer">
                     <div
                       class="owl-stage"
@@ -183,22 +56,16 @@
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
                               <h1 class="font-weight-bold">
-                                If you wanted to get rich, how would you do it?
+                                <a href="{{ route('news.show', ['id' => $recent1->id]) }}">{{ $recent1->judul_berita }}</a>
                               </h1>
-                              <h5 class="font-weight-normal m-0">
-                                Lorem Ipsum has been the industry's standard
-                              </h5>
                               <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
                               >
-                                <span class="fs-10 mr-1">2 hours ago</span>
-                                <i class="mdi mdi-bookmark-outline mr-3"></i>
-                                <span class="fs-10 mr-1">126</span>
-                                <i class="mdi mdi-comment-outline"></i>
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <img src="{{ url('/images/banner.jpg ') }}" alt="" />
+                              <a href="{{ route('news.show', ['id' => $recent1->id]) }}"><img src="{{ url('/images/banner.jpg ') }}" alt="" /></a>
+                              
                             </div>
                           </div>
                         </div>
@@ -208,25 +75,15 @@
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
                               <h1 class="font-weight-bold">
-                                If you wanted to get rich, how would you do it?
+                                <a href="{{ route('news.show', ['id' => $recent2->id]) }}">{{ $recent2->judul_berita }}</a>
                               </h1>
-                              <h5 class="font-weight-normal m-0">
-                                Lorem Ipsum has been the industry's standard
-                              </h5>
                               <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
                               >
-                                <span class="fs-10 mr-1">2 hours ago</span>
-                                <i class="mdi mdi-bookmark-outline mr-3"></i>
-                                <span class="fs-10 mr-1">126</span>
-                                <i class="mdi mdi-comment-outline"></i>
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <img
-                                src="{{ url('/images/banner_1.jpg ') }}"
-                                alt=""
-                              />
+                              <a href="{{ route('news.show', ['id' => $recent2->id]) }}"><img src="{{ url('/images/banner_1.jpg ') }}" alt="" /></a>
                             </div>
                           </div>
                         </div>
@@ -236,25 +93,15 @@
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
                               <h1 class="font-weight-bold">
-                                If you wanted to get rich, how would you do it?
+                                <a href="{{ route('news.show', ['id' => $recent3->id]) }}">{{ $recent3->judul_berita }}</a>
                               </h1>
-                              <h5 class="font-weight-normal m-0">
-                                Lorem Ipsum has been the industry's standard
-                              </h5>
                               <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
                               >
-                                <span class="fs-10 mr-1">2 hours ago</span>
-                                <i class="mdi mdi-bookmark-outline mr-3"></i>
-                                <span class="fs-10 mr-1">126</span>
-                                <i class="mdi mdi-comment-outline"></i>
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <img
-                                src="{{ url('/images/banner_2.jpg ') }}"
-                                alt=""
-                              />
+                              <a href="{{ route('news.show', ['id' => $recent3->id]) }}"><img src="{{ url('/images/banner_2.jpg ') }}" alt="" /></a>
                             </div>
                           </div>
                         </div>
@@ -264,25 +111,15 @@
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
                               <h1 class="font-weight-bold">
-                                If you wanted to get rich, how would you do it?
+                                <a href="{{ route('news.show', ['id' => $recent4->id]) }}">{{ $recent4->judul_berita }}</a>
                               </h1>
-                              <h5 class="font-weight-normal m-0">
-                                Lorem Ipsum has been the industry's standard
-                              </h5>
-                              <p
+                                <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
                               >
-                                <span class="fs-10 mr-1">2 hours ago</span>
-                                <i class="mdi mdi-bookmark-outline mr-3"></i>
-                                <span class="fs-10 mr-1">126</span>
-                                <i class="mdi mdi-comment-outline"></i>
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <img
-                                src="{{ url('/images/banner_3.jpg ') }}"
-                                alt=""
-                              />
+                              <a href="{{ route('news.show', ['id' => $recent4->id]) }}"><img src="{{ url('/images/banner_3.jpg ') }}" alt="" /></a>
                             </div>
                           </div>
                         </div>
@@ -312,8 +149,8 @@
           <div class="world-news">
             <div class="row">
               <div class="col-sm-12">
-                <div class="d-flex position-relative float-left">
-                  <h3 class="section-title">World News</h3>
+                <div id="International" class="d-flex position-relative float-left">
+                  <h3 id = "International"class="section-title">Internasional</h3>
                 </div>
               </div>
             </div>
@@ -325,16 +162,13 @@
                     class="img-fluid"
                     alt="world-news"
                   />
-                  <span class="thumb-title">TRAVEL</span>
+                  <span class="thumb-title">INTERNASIONAL</span>
                 </div>
                 <h5 class="font-weight-bold mt-3">
-                  Refugees flood Turkey's border with Greece
+                  {{$international1->judul_berita}}
                 </h5>
-                <p class="fs-15 font-weight-normal">
-                  Lorem Ipsum has been the industry's standard dummy text
-                </p>
                 <a
-                  href=""
+                  href="{{ route('news.show', ['id' => $international1->id]) }}"
                   class="font-weight-bold text-dark pt-2"
                   >Read Article</a
                 >
@@ -346,16 +180,13 @@
                     class="img-fluid"
                     alt="world-news"
                   />
-                  <span class="thumb-title">NEWS</span>
+                  <span class="thumb-title">INTERNASIONAL</span>
                 </div>
                 <h5 class="font-weight-bold mt-3">
-                  South Korea’s Moon Jae-in sworn in vowing address
+                  {{$international2->judul_berita}}
                 </h5>
-                <p class="fs-15 font-weight-normal">
-                  Lorem Ipsum has been the industry's standard dummy text
-                </p>
                 <a
-                  href=""
+                  href="{{ route('news.show', ['id' => $international2->id]) }}"
                   class="font-weight-bold text-dark pt-2"
                   >Read Article</a
                 >
@@ -367,16 +198,13 @@
                     class="img-fluid"
                     alt="world-news"
                   />
-                  <span class="thumb-title">ART</span>
+                  <span class="thumb-title">INTERNASIONAL</span>
                 </div>
                 <h5 class="font-weight-bold mt-3">
-                  These puppies are training to assist in avalanche rescue
+                  {{$international3->judul_berita}}
                 </h5>
-                <p class="fs-15 font-weight-normal">
-                  Lorem Ipsum has been the industry's standard dummy text
-                </p>
                 <a
-                  href=""
+                  href="{{ route('news.show', ['id' => $international3->id]) }}"
                   class="font-weight-bold text-dark pt-2"
                   >Read Article</a
                 >
@@ -388,16 +216,13 @@
                     class="img-fluid"
                     alt="world-news"
                   />
-                  <span class="thumb-title">BUSINESS</span>
+                  <span class="thumb-title">INTERNASIONAL</span>
                 </div>
                 <h5 class="font-weight-bold mt-3">
-                  'Love Is Blind' couple opens up about their first year
+                  {{$international4->judul_berita}}
                 </h5>
-                <p class="fs-15 font-weight-normal">
-                  Lorem Ipsum has been the industry's standard dummy text
-                </p>
                 <a
-                  href=""
+                  href="{{ route('news.show', ['id' => $international4->id]) }}"
                   class="font-weight-bold text-dark pt-2"
                   >Read Article</a
                 >
@@ -407,8 +232,8 @@
           <div class="editors-news">
             <div class="row">
               <div class="col-lg-3">
-                <div class="d-flex position-relative float-left">
-                  <h3 class="section-title">Popular News</h3>
+                <div id="sport" class="d-flex position-relative float-left">
+                  <h3 class="section-title">Sport News</h3>
                 </div>
               </div>
             </div>
@@ -420,16 +245,11 @@
                     class="img-fluid"
                     alt="world-news"
                   />
-                  <span class="thumb-title">NEWS</span>
+                  <span class="thumb-title">SPORT</span>
                 </div>
                 <h1 class="font-weight-600 mt-3">
-                  Melania Trump speaks about courage at State Department
+                  <a href="{{ route('news.show', ['id' => $sport1->id]) }}">{{$sport1->judul_berita}}</a>
                 </h1>
-                <p class="fs-15 font-weight-normal">
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s, when an unknown printer took a galley of type
-                  and
-                </p>
               </div>
               <div class="col-lg-6 mb-5 mb-sm-2">
                 <div class="row">
@@ -440,14 +260,11 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">POLITICS</span>
+                      <span class="thumb-title">SPORT</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      A look at California's eerie plane graveyards
+                      <a href="{{ route('news.show', ['id' => $sport2->id]) }}">{{$sport2->judul_berita}}</a>
                     </h5>
-                    <p class="fs-15 font-weight-normal">
-                      Lorem Ipsum has been the industry's standard dummy text
-                    </p>
                   </div>
                   <div class="col-sm-6 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
@@ -456,14 +273,11 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">TRAVEL</span>
+                      <span class="thumb-title">SPORT</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      The world's most beautiful racecourses
+                      <a href="{{ route('news.show', ['id' => $sport3->id]) }}">{{$sport3->judul_berita}}</a>
                     </h5>
-                    <p class="fs-15 font-weight-normal">
-                      Lorem Ipsum has been the industry's standard dummy text
-                    </p>
                   </div>
                 </div>
                 <div class="row mt-3">
@@ -474,14 +288,11 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">POLITICS</span>
+                      <span class="thumb-title">SPORT</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      Japan cancels cherry blossom festivals over virus fears
+                      <a href="{{ route('news.show', ['id' => $sport4->id]) }}">{{$sport4->judul_berita}}</a>
                     </h5>
-                    <p class="fs-15 font-weight-normal">
-                      Lorem Ipsum has been the industry's standard dummy text
-                    </p>
                   </div>
                   <div class="col-sm-6">
                     <div class="position-relative image-hover">
@@ -490,14 +301,11 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">TRAVEL</span>
+                      <span class="thumb-title">SPORT</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      Classic cars reborn as electric vehicles
+                      <a href="{{ route('news.show', ['id' => $sport5->id]) }}">{{$sport5->judul_berita}}</a>
                     </h5>
-                    <p class="fs-15 font-weight-normal">
-                      Lorem Ipsum has been the industry's standard dummy text
-                    </p>
                   </div>
                 </div>
               </div>
@@ -507,7 +315,7 @@
             <div class="row">
               <div class="col-lg-3">
                 <div class="d-flex position-relative float-left">
-                  <h3 class="section-title">Editor choice</h3>
+                  <h3 class="section-title">Other news</h3>
                 </div>
               </div>
             </div>
@@ -521,10 +329,10 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">LIFESTYLE</span>
+                      <span class="thumb-title">{{$additionalRecent1->jenis_berita}}</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      The island country that gave Mayor Pete his name
+                      <a href="{{ route('news.show', ['id' => $additionalRecent1->id]) }}">{{$additionalRecent1->judul_berita}}</a>
                     </h5>
                   </div>
                   <div class="col-sm-4 mb-5 mb-sm-2">
@@ -534,10 +342,10 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">SPORTS</span>
+                      <span class="thumb-title">{{$additionalRecent2->jenis_berita}}</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      Disney parks expand (good) vegan food options
+                      <a href="{{ route('news.show', ['id' => $additionalRecent2->id]) }}">{{$additionalRecent2->judul_berita}}</a>
                     </h5>
                   </div>
                   <div class="col-sm-4 mb-5 mb-sm-2">
@@ -547,10 +355,10 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">INTERNET</span>
+                      <span class="thumb-title">{{$additionalRecent3->jenis_berita}}</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      A hot springs where clothing is optional after dark
+                      <a href="{{ route('news.show', ['id' => $additionalRecent3->id]) }}">{{$additionalRecent3->judul_berita}}</a>
                     </h5>
                   </div>
                 </div>
@@ -562,10 +370,10 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">NEWS</span>
+                      <span class="thumb-title">{{$additionalRecent4->jenis_berita}}</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      Japanese chef carves food into incredible pieces of art
+                      <a href="{{ route('news.show', ['id' => $additionalRecent4->id]) }}">{{$additionalRecent4->judul_berita}}</a>
                     </h5>
                   </div>
                   <div class="col-sm-4 mb-5 mb-sm-2">
@@ -575,10 +383,10 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">NEWS</span>
+                      <span class="thumb-title">{{$additionalRecent5->jenis_berita}}</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      The Misanthrope Society: A Taipei bar for people who
+                      <a href="{{ route('news.show', ['id' => $additionalRecent5->id]) }}">{{$additionalRecent5->judul_berita}}</a>
                     </h5>
                   </div>
                   <div class="col-sm-4 mb-5 mb-sm-2">
@@ -588,10 +396,10 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">TOURISM</span>
+                      <span class="thumb-title">{{$additionalRecent6->jenis_berita}}</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      From Pakistan to the Caribbean: Curry's journey
+                      <a href="{{ route('news.show', ['id' => $additionalRecent6->id]) }}">{{$additionalRecent6->judul_berita}}</a>
                     </h5>
                   </div>
                 </div>
@@ -607,53 +415,37 @@
                   </div>
                   <div class="col-sm-12">
                     <div class="border-bottom pb-3">
-                      <h5 class="font-weight-600 mt-0 mb-0">
-                        South Korea’s Moon Jae-in sworn in vowing address
+                      <h5  class="font-weight-600 mt-0 mb-0">
+                        <a href="{{ route('news.show', ['id' => $recent1->id]) }}">{{ $recent1->judul_berita }}</a>
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">
-                        <span class="fs-10 mr-1">2 hours ago</span>
-                        <i class="mdi mdi-bookmark-outline mr-3"></i>
-                        <span class="fs-10 mr-1">126</span>
-                        <i class="mdi mdi-comment-outline"></i>
                       </p>
                     </div>
                   </div>
                   <div class="col-sm-12">
                     <div class="border-bottom pt-4 pb-3">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        South Korea’s Moon Jae-in sworn in vowing address
+                        <a href="{{ route('news.show', ['id' => $recent2->id]) }}">{{ $recent2->judul_berita }}</a>
                       </h5>
-                      <p class="text-color m-0 d-flex align-items-center">
-                        <span class="fs-10 mr-1">2 hours ago</span>
-                        <i class="mdi mdi-bookmark-outline mr-3"></i>
-                        <span class="fs-10 mr-1">126</span>
-                        <i class="mdi mdi-comment-outline"></i>
+                      <p class="text-color m-0 d-flex align-items-center">                        
                       </p>
                     </div>
                   </div>
                   <div class="col-sm-12">
                     <div class="border-bottom pt-4 pb-3">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        South Korea’s Moon Jae-in sworn in vowing address
+                        <a href="{{ route('news.show', ['id' => $recent3->id]) }}">{{ $recent3->judul_berita }}</a>
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">
-                        <span class="fs-10 mr-1">2 hours ago</span>
-                        <i class="mdi mdi-bookmark-outline mr-3"></i>
-                        <span class="fs-10 mr-1">126</span>
-                        <i class="mdi mdi-comment-outline"></i>
                       </p>
                     </div>
                   </div>
                   <div class="col-sm-12">
                     <div class="pt-4">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        South Korea’s Moon Jae-in sworn in vowing address
+                        <a href="{{ route('news.show', ['id' => $recent4->id]) }}">{{ $recent4->judul_berita }}</a>
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">
-                        <span class="fs-10 mr-1">2 hours ago</span>
-                        <i class="mdi mdi-bookmark-outline mr-3"></i>
-                        <span class="fs-10 mr-1">126</span>
-                        <i class="mdi mdi-comment-outline"></i>
                       </p>
                     </div>
                   </div>
@@ -668,189 +460,6 @@
         <!-- partial:partials/_footer.html -->
         <footer>
           <div class="container">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="border-top"></div>
-              </div>
-              <div class="col-sm-3 col-lg-3">
-                <ul class="footer-vertical-nav">
-                  <li class="menu-title">
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/news-post.html"
-                      >News</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html"
-                      >Home</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/world.html"
-                      >World</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/author.html"
-                      >Magazine</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/business.html"
-                      >Business</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/politics.html"
-                      >Politics</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="col-sm-3 col-lg-3">
-                <ul class="footer-vertical-nav">
-                  <li class="menu-title">
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/world.html"
-                      >World</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/sports.html"
-                      >Sports</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/art.html"
-                      >Art</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Magazine</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/real-estate.html"
-                      >Real estate</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/travel.html"
-                      >Travel</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/author.html"
-                      >Author</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="col-sm-3 col-lg-3">
-                <ul class="footer-vertical-nav">
-                  <li class="menu-title">
-                    <a
-                      href=""
-                      >Features</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Photography</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Video</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/news-post.html"
-                      >Newsletters</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Live Events</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Stores</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Jobs</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="col-sm-3 col-lg-3">
-                <ul class="footer-vertical-nav">
-                  <li class="menu-title">
-                    <a
-                      href=""
-                      >More</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >RSS</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >FAQ</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >User Agreement</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Privacy</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/aboutus.html"
-                      >About us</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/contactus.html"
-                      >Contact</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
             <div class="row">
               <div class="col-sm-12">
                 <div class="d-flex justify-content-between">

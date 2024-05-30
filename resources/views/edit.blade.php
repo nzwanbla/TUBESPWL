@@ -3,187 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor Berita</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            background-color: #333;
-            overflow: hidden;
-            
-        }
-        .links{
-            margin-left: 20%
-        }
-        .navbar .title {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 20px 20px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .navbar a{
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 20px 16px;
-            text-decoration: none;
-            margin-left: 20px; 
-        }
-        .navbar a:hover{
-            background-color: #ddd;
-            color: black;
-        }
-
-        .slider-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100px;
-        }
-
-        .slider {
-            position: relative;
-            width: 200px;
-            height: 50px;
-            background-color: #ddd;
-            border-radius: 25px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .slider input {
-            display: none;
-        }
-
-        .slider-option {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50%;
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-            color: #fff;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        #edit:checked ~ .slider-button {
-            transform: translateX(100%);
-        }
-
-        .slider-button {
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            width: 90px;
-            height: 40px;
-            background-color: #007bff;
-            border-radius: 20px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        #edit:checked ~ .slider-option[for="create"] {
-            color: #666;
-        }
-
-        #edit:checked ~ .slider-option[for="edit"] {
-            color: #fff;
-        }
-
-        #edit:checked ~ .slider-button {
-            background-color: #28a745;
-        }
-
-        .slider-option[for="create"] {
-            left: 5px;
-        }
-
-        .slider-option[for="edit"] {
-            right: 5px;
-        }
-        .horizontal-group {
-            display: flex;
-            gap: 4%; 
-        }
-
-        #editor-form{
-            margin-top: 50px;
-            margin-left: 10%;
-            margin-right: 10%;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-row {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .form-row .form-group {
-            flex: 1;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input[type="text"], textarea, select {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-            max-width: 100%;
-        }
-
-
-
-        
-        textarea {
-            resize: both; 
-            overflow: auto; 
-            max-width: 100%;  
-        }
-        #judul, #jenis{
-            min-width: 48%;
-            margin-left: 0;
-            margin-right: 0;
-        }
-
-        #buttons{
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #delete, #post{
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 50px;
-            padding: 10px 20px; /* Add padding for space inside the button */
-            font-size: 16px; /* Increase font size for better readability */
-            font-weight: bold; /* Make the text bold */
-            color: #fff; /* White text color */
-            background-color: #007bff; /* Blue background color */
-            border: none; /* Remove default border */
-            border-radius: 5px; /* Rounded corners */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
-        }
-    </style>
+    <title>NEWSIGHT - Edit</title>
+    @vite('public/css/edit.css')
 </head>
 <body>
-    <div class="navbar">
-        <div class="title">Buat Berita Anda!</div>
-        <div class="links">
-            <a href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>      
-        </div>
-    </div>
-    
+    @include('components.user-navbar')
     <div class="slider-container">
         <div class="slider">
             <input type="radio" name="slider" id="create" onclick="location.href='{{ route('create.show') }}'">
@@ -194,9 +18,9 @@
         </div>
     </div>
 
-
+ 
     <form id="editor-form" method="POST" action="{{ route('edit.update', ['id' => $selectedNews->id] ) }}">
-        <!-- CSRF Token -->
+        @csrf
         <input type="hidden" name="_method" id="form-method" value="POST">
 
         <div class="horizontal-group" >
@@ -207,7 +31,12 @@
 
             <div class="form-group" id="jenis">
                 <label for="jenis_berita">Jenis Berita</label>
-                <input type="text" id="jenis_berita" name="jenis_berita" value="{{ $selectedNews->jenis_berita ?? '' }}">
+                    <select id="jenis_berita" name="jenis_berita">
+                        @foreach ($types as $type)
+                        <option value="{{ $type->jenis_berita }}" 
+                            {{ $type->jenis_berita === $selectedNews->jenis_berita ? 'selected' : '' }}>{{ $type->jenis_berita }}</option>
+                        @endforeach
+                    </select>
             </div>
         </div>
 
@@ -241,18 +70,29 @@
             <textarea id="isi3" name="isi3" rows="3" >{{ $selectedNews->isi3 ?? '' }}</textarea>
         </div>
 
-        <div  id="buttons">
+
+        <div class="form-group" id="status-group">
+            <label for="status">Jenis Berita</label>
+            <select id="status" name="status">
+                <option value="reject"                             
+                {{ 'reject' === $selectedNews->status ? 'selected' : '' }}>Reject</option>
+                <option value="accept" 
+                {{ 'accept' === $selectedNews->status ? 'selected' : '' }}>Accept</option>
+            </select>
+        </div>
+
+        <div id="buttons">
             <button id="post" type="button" onclick="submitForm('post')">Post</button>
             <button id="delete" type="button" onclick="submitForm('delete')">Delete</button>            
         </div>
 
     </form>
-
+    @include('components.footer')
     <script>
+        
         function submitForm(action) {
             const form = document.getElementById('editor-form');
             const methodInput = document.getElementById('form-method');
-    
             if (action === 'post') {
                 form.action = "{{ route('edit.update', ['id' => $selectedNews->id]) }}";
                 methodInput.value = 'POST';
@@ -260,9 +100,18 @@
                 form.action = "{{ route('edit.delete', ['id' => $selectedNews->id]) }}";
                 methodInput.value = 'DELETE';
             }
-    
             form.submit(); 
         }
+        document.addEventListener("DOMContentLoaded", function() {
+            const user_id = localStorage.getItem('user-id');
+            if (user_id != "1") {
+                document.getElementById('status-group').style.display = 'none';
+            }
+        });
+
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="{{ url('/js/auth.js') }}"></script>
+    {{-- <script src="{{ url('/js/edit.js') }}"></script> --}}
 </body>
 </html>
