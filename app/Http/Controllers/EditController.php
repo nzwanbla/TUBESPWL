@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 Use App\Models\berita;
-Use App\Models\jenis;
 use Illuminate\Http\Request;
 
 class EditController extends Controller
@@ -14,7 +13,9 @@ class EditController extends Controller
      */
     public function index(Request $request)
     {
-        $news = berita::all();        
+        $news = berita::all();
+        // $selectedNews = berita::where('judul_berita', $request->judul_berita)->first();
+        
         return view('edit', ['news' => $news, 'selectedNews' => $selectedNews]);
     }
 
@@ -37,10 +38,7 @@ class EditController extends Controller
      */
     public function show($id)
     {
-        $types = jenis::all();
- 
-        return view('edit', ['selectedNews' => berita::find($id), 'types' => $types]);
-
+        return view('edit', ['selectedNews' => berita::find($id)]);
     }
 
     /**
@@ -61,12 +59,11 @@ class EditController extends Controller
             'isi2'          => 'nullable',
             'judul3'        => 'nullable',
             'isi3'          => 'nullable',
-            'status'        => 'required',
         ]);
 
         $beritaDipilih = berita::findOrFail($id);  
         $beritaDipilih->update($validatedData);
-        return redirect()->route('dashboard.show'); 
+        return redirect()->route('search.show'); 
 
     }
 

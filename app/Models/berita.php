@@ -21,10 +21,6 @@ class berita extends Model
             'isi2', 
             'judul3',
             'isi3',
-            'user_id',
-            'status',
-            'created_at',
-            'updated_at'
         ];
 
 }

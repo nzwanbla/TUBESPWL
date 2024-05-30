@@ -23,11 +23,10 @@ return new class extends Migration
             $table->string('isi2');
             $table->string('judul3');
             $table->string('isi3');
-            $table->unsignedBigInteger('user_id'); // Add this line
-            $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade'); // Add this line for foreign key constraint
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      *
