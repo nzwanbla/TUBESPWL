@@ -78,6 +78,7 @@ class EditController extends Controller
      */
     public function destroy($id)
     {
-        return berita::destroy($id);
+        berita::destroy($id);
+        return redirect()->route('dashboard');
     }
 }

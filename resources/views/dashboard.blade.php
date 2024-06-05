@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEWSIGHT - Dashboard</title>
+    <title>Editor Berita</title>
     
     @vite('public/css/dashboard.css') 
     @vite('public/css/tailwind.css')
     {{--  --}}
 </head>
-<body class="p-10 bg-gray-100">
+<body class="bg-gray-100">
   @include('components.footer')
   @include('components.user-navbar')
   
   <div class="slider-container">
       <div class="slider">
-          <input type="radio" name="slider" id="create" onclick="location.href='{{ route('create.show') }}'">
+          <input type="radio" name="slider" id="create" onclick="location.href='{{ route('create') }}'">
           <input type="radio" name="slider" id="edit" checked>
           <div class="slider-button"></div>
           <label for="create" class="slider-option">Create</label>
@@ -26,11 +26,9 @@
 <br>
 <br>
 
-
-
   <div id="table-container">
 
-    <table class="divide-y divide-gray-200">
+    <table class="divide-y divide-gray-200" id="table-dashboard">
       <thead class="bg-gray-50">
         <tr>
           <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -81,11 +79,7 @@
     </table>
   </div>
   
-  
-
-  
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="{{ url('/js/auth.js') }}"></script>
   <script src="{{ url('/js/dashboard.js') }}"></script>
 
 </body>

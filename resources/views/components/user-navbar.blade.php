@@ -1,10 +1,12 @@
 @vite('public/css/navbar.css')
 @vite('public/js/navbar.js')
 
-
 <header style="background-color: rgb(29, 11, 103)">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
+         <!-- Back Button -->
+         <button id="backButton" onclick="history.back()" class="text-sm font-semibold leading-6 text-gray-300 mr-4 pr-20"><span aria-hidden="true">&larr;</span>Back</button>
+        
         <a href="{{ route('headline.show') }}">
           <h1 class="text-xl font-semibold text-gray-300">Website Berita</h1>
         </a>
@@ -29,9 +31,13 @@
         <a href="{{ route('search.show') }}" class="text-sm font-semibold leading-6 text-gray-300">Search</a>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end ">
-        <a  href="{{ route('dashboard.show') }}" class="text-sm font-semibold leading-6 text-gray-300 mr-10">Dashboard<span aria-hidden="true">&rarr;</span></a>
-
-        <a href="{{ route('logout.run') }}" class="text-sm font-semibold leading-6 text-gray-300">Logout<span aria-hidden="true">&rarr;</span></a>
+      <button type="submit"> 
+    <a href="{{ route('usermanagement') }}" class="text-sm font-semibold leading-6 text-gray-300 mr-4">User Management<span aria-hidden="true">&rarr;</span></a>
+</button>
+      <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit" class="text-sm font-semibold leading-6 text-gray-300">Logout<span aria-hidden="true">&rarr;</span></type>
+        </form>
       </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
@@ -61,7 +67,7 @@
               <a href="{{ route('search.show') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Search</a>
             </div>
             <div class="py-6">
-              <a href="{{ route('dashboard.show') }}" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Dashboard</a>
+              <a href="{{ route('dashboard') }}" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Dashboard</a>
             </div>
           </div>
         </div>

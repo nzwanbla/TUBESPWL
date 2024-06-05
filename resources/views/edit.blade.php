@@ -10,7 +10,7 @@
     @include('components.user-navbar')
     <div class="slider-container">
         <div class="slider">
-            <input type="radio" name="slider" id="create" onclick="location.href='{{ route('create.show') }}'">
+            <input type="radio" name="slider" id="create" onclick="location.href='{{ route('create') }}'">
             <input type="radio" name="slider" id="edit" checked>
             <div class="slider-button"></div>
             <label for="create" class="slider-option">Create</label>
@@ -20,7 +20,7 @@
 
  
     <form id="editor-form" method="POST" action="{{ route('edit.update', ['id' => $selectedNews->id] ) }}">
-        <!-- CSRF Token -->
+        @csrf
         <input type="hidden" name="_method" id="form-method" value="POST">
 
         <div class="horizontal-group" >
@@ -111,7 +111,6 @@
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="{{ url('/js/auth.js') }}"></script>
     {{-- <script src="{{ url('/js/edit.js') }}"></script> --}}
 </body>
 </html>

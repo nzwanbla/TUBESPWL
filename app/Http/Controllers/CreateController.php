@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 Use App\Models\jenis;
 Use App\Models\berita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class CreateController extends Controller
 {
@@ -30,18 +32,15 @@ class CreateController extends Controller
         $jenis_berita = $request->jenis_berita;
         $judul1 = $request->judul1;
         $isi1 = $request->isi1;
-        $user_id = $request->user_id;
 
-        if (empty($judul_berita)) {return response()->json(['error' => '"judul_berita" harus diisi.'], 422);}
+        if (empty($judul_berita)) {return response()->json(['error' => '"judul_berita" harus diisi.'], 777);}
         
-        if (empty($jenis_berita)) {return response()->json(['error' => '"jenis_berita" harus diisi.'], 422);}
+        if (empty($jenis_berita)) {return response()->json(['error' => '"jenis_berita" harus diisi.'], 778);}
         
-        if (empty($judul1)) {return response()->json(['error' => '"judul1" harus diisi.'], 422);}
+        if (empty($judul1)) {return response()->json(['error' => '"judul1" harus diisi.'], 779);}
         
-        if (empty($isi1)) {return response()->json(['error' => '"isi1" harus diisi.'], 422);}
+        if (empty($isi1)) {return response()->json(['error' => '"isi1" harus diisi.'], 780);}
         
-        if (empty($user_id)) {return response()->json(['error' => '"user_id" harus diisi.'], 422);}
-
         $validated = $request->validate([
             'judul_berita'  => 'required',
             'jenis_berita'  => 'required',
@@ -51,12 +50,27 @@ class CreateController extends Controller
             'isi2'          => 'nullable',
             'judul3'        => 'nullable',
             'isi3'          => 'nullable',
-            'user_id'       => 'required',
-        ]); 
+            'fileimage' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+            ]);
 
-        $berita = Berita::create($validated);
-        return response()->json(['message' => "Berita Sudah Ditambahkan!"]);
-       
+
+            if ($request->hasFile('fileimage')) {
+                $file = $request->file('fileimage');
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $filePath = $file->storeAs('images', $fileName, 'public'); // Simpan ke folder 'images' dalam storage/app/public
+                $validated['fileimage'] = $filePath; // Simpan path file ke database
+            }else{
+                $validated['fileimage'] = "star-magazine-14.jpg";
+            }
+            
+            $validated['user_id'] = Auth::id();
+            $validated['status'] = 'Accept';
+
+            Berita::create($validated);
+            
+            session()->flash('success', 'Berita berhasil disimpan!');
+
+            return redirect()->to('/create');
     }
 
     /**

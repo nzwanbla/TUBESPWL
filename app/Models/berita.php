@@ -24,7 +24,13 @@ class berita extends Model
             'user_id',
             'status',
             'created_at',
-            'updated_at'
+            'updated_at',
+            'fileimage'
         ];
 
+        public function komentar()
+        {
+            return $this->hasMany(Komentar::class, 'post_id'); 
+        }
+        
 }

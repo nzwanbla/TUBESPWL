@@ -57,11 +57,11 @@
 <div class="search-container">
     <h1>Search News</h1>
     <form action="/search" method="POST" action="{{route('search.run')}}">
+        @csrf
         <input type="text" name="query" id="query" placeholder="Search...">
         <button type="submit">Search</button>
     </form>
 </div>
-
 <table>
     <thead>
         <tr>
@@ -79,6 +79,6 @@
 
     </tbody>
 </table>
-
+<script  src="{{ url('/js/auth2.js') }}"></script>
 </body>
 </html>

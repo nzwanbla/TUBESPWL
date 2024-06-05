@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 Use App\Models\berita;
+
 class DashboardController extends Controller
 {
     /**
@@ -13,7 +15,14 @@ class DashboardController extends Controller
      */
     public function index(Berita $berita)
     {
+        $userid = Auth::id();
+        //dd($userid);
+        if($userid == 1){
         $news = berita::all();
+        }else{
+        $news = berita::where("user_id",$userid)->get();
+        }
+
         return view('dashboard', ['news' => $news]);
     }
 

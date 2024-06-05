@@ -24,8 +24,7 @@
   <body
     data-new-gr-c-s-check-loaded="14.1172.0"
     data-gr-ext-installed=""
-    style=""
-  >
+    style="">
     <div class="container-scroller">
       <div class="main-panel">
         @include('components.guest-navbar')
@@ -33,12 +32,14 @@
           <div class="news-content">
             <div class="row">
               <div class="col-lg-9">
-                <h1 class="web-title">{{ $news->judul_berita }} -  {{ $news->date_created }}</h1>
+                <h1 class="web-title">{{ $news->judul_berita }}</h1>
+                <h1>{{ $news->created_at }} - {{ $penulis }}</h1>
                 <br>
+                
                 <div class="image-holder">
                   <div class="position-relative">
                     <img
-                      src="{{ url('/images/star-magazine-14.jpg ') }}"
+                      src="{{ url('/storage/') .'/'. $news->fileimage }}"
                       class="img-fluid"
                     />
                   </div>
@@ -47,7 +48,6 @@
                 <hr>
 
                 <div class="news-content">
-                  <h1 class="web-title">{{ $news->judul_berita }}</h1>
 
                   <h1 class="judul-paragraf">{{ $news->judul1 }}</h1>
                   <h1 class="isi-paragraf">{{ $news->isi1 }}</h1>
@@ -57,6 +57,47 @@
   
                   <h1 class="judul-paragraf">{{ $news->judul3 }}</h1>
                   <h1 class="isi-paragraf">{{ $news->isi3 }}</h1>
+                  <p class="text-xl	mt-12">Komentar : </p>
+                  <div class="mt-4 space-y-4">
+                    @foreach($komentar as $comment)
+        <div class="comment bg-white rounded-lg p-4 shadow-md relative">
+            <div class="flex items-center justify-between mb-2">
+                <div>
+                    <strong class="text-gray-800">{{ $comment->username }}</strong>
+                    <span class="text-gray-500 text-sm ml-2">{{ $comment->tanggal }}</span>
+                </div>
+                @if ($user = auth()->user())
+                  @if($comment->username == auth()->user()->name or auth()->user()->id == 1) 
+                  <div class="flex space-x-2">
+                      <a href="" class="text-blue-500 hover:text-blue-700">Edit</a>
+                      <form action="{{ route('news.komentar.destroy', ['id' => $comment->id]) }}" method="POST" class="inline">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="text-red-500 hover:text-red-700" onclick="return confirm('Apakah Anda yakin ingin menghapus komentar ini?')">Hapus</button>
+                      </form>
+
+                  </div>
+                  @endif
+                @endif
+            </div>
+            <p class="text-gray-700">{{ $comment->isi_komentar }}</p>
+        </div>
+        @endforeach
+        @if ($user = auth()->user())
+        <form action="{{ route('news.komentar.store', ['id' => $news->id]) }}" method="POST" class="mt-4">
+          @csrf
+        <div class="mb-4">
+            <label for="isi_komentar" class="block text-gray-700 text-sm font-bold mb-2">Tulis Komentar:</label>
+            <textarea name="isi_komentar" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Tulis komentar Anda di sini"></textarea>
+        </div>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            Kirim Komentar
+        </button>
+        </form>
+        @endif
+        </div>
+
+
                 </div>
 
               </div>
@@ -72,7 +113,7 @@
                   <div class="col-sm-12">
                     <div class="border-bottom pb-3">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        {{ $recent1->judul_berita }}
+                      <a href="{{ route('news.show', ['id' => $recent1->id]) }}">{{ $recent1->judul_berita }}</a>
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">
                       </p>
@@ -81,7 +122,7 @@
                   <div class="col-sm-12">
                     <div class="border-bottom pt-4 pb-3">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        {{ $recent2->judul_berita }}
+                      <a href="{{ route('news.show', ['id' => $recent2->id]) }}">{{ $recent2->judul_berita }}</a>
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">                        
                       </p>
@@ -90,7 +131,7 @@
                   <div class="col-sm-12">
                     <div class="border-bottom pt-4 pb-3">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        {{ $recent3->judul_berita }}
+                      <a href="{{ route('news.show', ['id' => $recent3->id]) }}">{{ $recent3->judul_berita }}</a>
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">
                       </p>
@@ -99,12 +140,14 @@
                   <div class="col-sm-12">
                     <div class="pt-4">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        {{ $recent4->judul_berita }}
+                      <a href="{{ route('news.show', ['id' => $recent4->id]) }}">{{ $recent4->judul_berita }}</a>
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">
                       </p>
                     </div>
+                    
                   </div>
+
                 </div>
                 
               </div>
@@ -197,6 +240,7 @@
     <!-- Custom js for this page-->
     <script  src="{{ url('/js/demo.js') }}"></script>
     <!-- End custom js for this page-->
+    
   </body>
 
 </html>

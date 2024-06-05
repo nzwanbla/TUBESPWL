@@ -64,7 +64,7 @@
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <a href="{{ route('news.show', ['id' => $recent1->id]) }}"><img src="{{ url('/images/banner.jpg ') }}" alt="" /></a>
+                              <a href="{{ route('news.show', ['id' => $recent1->id]) }}"><img src="{{ url('/storage/') .'/'. $recent1->fileimage }}" alt="" /></a>
                               
                             </div>
                           </div>
@@ -83,7 +83,7 @@
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <a href="{{ route('news.show', ['id' => $recent2->id]) }}"><img src="{{ url('/images/banner_1.jpg ') }}" alt="" /></a>
+                              <a href="{{ route('news.show', ['id' => $recent2->id]) }}"><img src="{{ url('/storage/') .'/'. $recent2->fileimage }}" alt="" /></a>
                             </div>
                           </div>
                         </div>
@@ -101,7 +101,7 @@
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <a href="{{ route('news.show', ['id' => $recent3->id]) }}"><img src="{{ url('/images/banner_2.jpg ') }}" alt="" /></a>
+                              <a href="{{ route('news.show', ['id' => $recent3->id]) }}"><img src="{{ url('/storage/') .'/'. $recent3->fileimage }}" alt="" /></a>
                             </div>
                           </div>
                         </div>
@@ -119,7 +119,7 @@
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <a href="{{ route('news.show', ['id' => $recent4->id]) }}"><img src="{{ url('/images/banner_3.jpg ') }}" alt="" /></a>
+                              <a href="{{ route('news.show', ['id' => $recent4->id]) }}"><img src="{{ url('/storage/') .'/'. $recent4->fileimage }}" alt="" /></a>
                             </div>
                           </div>
                         </div>
@@ -158,7 +158,7 @@
               <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="{{ url('/images/travel.jpg ') }}"
+                    src="{{ url('/storage/') .'/'. $international1->fileimage }}"
                     class="img-fluid"
                     alt="world-news"
                   />
@@ -176,7 +176,7 @@
               <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="{{ url('/images/news.jpg ') }}"
+                  src="{{ url('/storage/') .'/'. $international1->fileimage }}"
                     class="img-fluid"
                     alt="world-news"
                   />
@@ -194,7 +194,7 @@
               <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="{{ url('/images/art.jpg ') }}"
+                  src="{{ url('/storage/') .'/'. $international3->fileimage }}"
                     class="img-fluid"
                     alt="world-news"
                   />
@@ -212,7 +212,7 @@
               <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="{{ url('/images/business.jpg ') }}"
+                  src="{{ url('/storage/') .'/'. $international4->fileimage }}"
                     class="img-fluid"
                     alt="world-news"
                   />
@@ -222,7 +222,7 @@
                   {{$international4->judul_berita}}
                 </h5>
                 <a
-                  href="{{ route('news.show', ['id' => $international4->id]) }}"
+                href="{{ route('news.show', ['id' => $international4->id]) }}"
                   class="font-weight-bold text-dark pt-2"
                   >Read Article</a
                 >
@@ -241,7 +241,7 @@
               <div class="col-lg-6 mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="{{ url('/images/glob.jpg ') }}"
+                  src="{{ url('/storage/') .'/'. $sport1->fileimage }}"
                     class="img-fluid"
                     alt="world-news"
                   />
@@ -256,7 +256,7 @@
                   <div class="col-sm-6 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="{{ url('/images/star-magazine-5.jpg ') }}"
+                      src="{{ url('/storage/') .'/'. $sport2->fileimage }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -269,7 +269,7 @@
                   <div class="col-sm-6 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="{{ url('/images/star-magazine-6.jpg ') }}"
+                      src="{{ url('/storage/') .'/'. $sport3->fileimage }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -284,7 +284,7 @@
                   <div class="col-sm-6 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="{{ url('/images/star-magazine-7.jpg ') }}"
+                      src="{{ url('/storage/') .'/'. $sport4->fileimage }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -297,7 +297,7 @@
                   <div class="col-sm-6">
                     <div class="position-relative image-hover">
                       <img
-                        src="{{ url('/images/star-magazine-8.jpg ') }}"
+                      src="{{ url('/storage/') .'/'. $sport5->fileimage }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -325,7 +325,7 @@
                   <div class="col-sm-4 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="{{ url('/images/star-magazine-9.jpg ') }}"
+                      src="{{ url('/storage/') .'/'. $additionalRecent1->fileimage }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -338,7 +338,7 @@
                   <div class="col-sm-4 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="{{ url('/images/star-magazine-10.jpg ') }}"
+                      src="{{ url('/storage/') .'/'. $additionalRecent2->fileimage }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -351,7 +351,7 @@
                   <div class="col-sm-4 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="{{ url('/images/star-magazine-11.jpg ') }}"
+                      src="{{ url('/storage/') .'/'. $additionalRecent3->fileimage }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -366,7 +366,7 @@
                   <div class="col-sm-4 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="{{ url('/images/star-magazine-12.jpg ') }}"
+                      src="{{ url('/storage/') .'/'. $additionalRecent4->fileimage }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -379,7 +379,7 @@
                   <div class="col-sm-4 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="{{ url('/images/star-magazine-13.jpg ') }}"
+                      src="{{ url('/storage/') .'/'. $additionalRecent5->fileimage }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -392,7 +392,7 @@
                   <div class="col-sm-4 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
                       <img
-                        src="{{ url('/images/star-magazine-14.jpg ') }}"
+                      src="{{ url('/storage/') .'/'. $additionalRecent6->fileimage }}"
                         class="img-fluid"
                         alt="world-news"
                       />
@@ -540,6 +540,7 @@
     <!-- Custom js for this page-->
     <script  src="{{ url('/js/demo.js') }}"></script>
     <!-- End custom js for this page-->
+
   </body>
 
 </html>

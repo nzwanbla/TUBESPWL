@@ -18,8 +18,8 @@ document.getElementById('create-form').addEventListener('submit', function(event
     const judul3 = document.getElementById('judul3').value;
     const isi3 = document.getElementById('isi3').value;
     const author_id = document.getElementById('user_id').value;
-    const status = "";
-
+    const status = "reject";
+    
     axios.post('/create', {
         judul_berita: judul_berita,
         jenis_berita: jenis_berita,
