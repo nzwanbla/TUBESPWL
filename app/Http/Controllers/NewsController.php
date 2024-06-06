@@ -98,7 +98,21 @@ class NewsController extends Controller
     
         return redirect()->back()->with('success', 'Komentar berhasil dihapus!');
     }
-    
+
+    public function updateKomentar(Request $request, $id)
+    {
+        $request->validate([
+            'isi_komentar' => 'required|string'
+        ]);
+
+        $komentar = Komentar::findOrFail($id);
+
+        $komentar->isi_komentar = $request->isi_komentar;
+        $komentar->save();
+
+        return response()->json(['message' => 'Komentar berhasil diperbarui.']);
+    }
+
     /**
      * Remove the specified resource from storage.
      *

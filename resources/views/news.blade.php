@@ -69,7 +69,7 @@
                 @if ($user = auth()->user())
                   @if($comment->username == auth()->user()->name or auth()->user()->id == 1) 
                   <div class="flex space-x-2">
-                      <a href="" class="text-blue-500 hover:text-blue-700">Edit</a>
+                  <button type="button" class="text-blue-500 hover:text-blue-700 edit-comment-button" data-comment-id="{{ $comment->id }}">Edit</button>
                       <form action="{{ route('news.komentar.destroy', ['id' => $comment->id]) }}" method="POST" class="inline">
                           @csrf
                           @method('DELETE')
@@ -240,7 +240,57 @@
     <!-- Custom js for this page-->
     <script  src="{{ url('/js/demo.js') }}"></script>
     <!-- End custom js for this page-->
-    
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+    $('.edit-comment-button').click(function () {
+        var commentId = $(this).data('comment-id');
+        var $commentContainer = $(this).closest('.comment');
+        var $commentParagraph = $commentContainer.find('.text-gray-700');
+
+        $commentParagraph.hide();
+        $(this).hide();
+
+        // Buat textarea
+        var $textarea = $('<textarea>')
+            .addClass('shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline')
+            .val($commentParagraph.text());
+
+        var $saveButton = $('<button>')
+            .text('Simpan')
+            .addClass('bg-blue-500 hover:bg-blue-700 text-white font-bold mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline');
+
+        $commentContainer.append($textarea);
+        $commentContainer.append($saveButton);
+
+        $saveButton.click(function () {
+            var newCommentContent = $textarea.val();
+            var commentId = $(this).closest('.comment').find('.edit-comment-button').data('comment-id');
+
+            $.ajax({
+                url: '{{ route("news.komentar.update", ":id") }}'.replace(':id', commentId),
+                type: 'PUT',
+                data: {
+                    isi_komentar: newCommentContent,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function (response) {
+                $commentContainer.find('.text-gray-700').text(newCommentContent).show();
+
+                $textarea.remove();
+                $saveButton.remove();
+
+                $commentContainer.find('.edit-comment-button').show(); 
+
+                },
+                error: function (xhr) {
+                  alert('Terjadi kesalahan saat menyimpan komentar.');
+                }
+            });
+        });
+    });
+});
+</script>
   </body>
 
 </html>

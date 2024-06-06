@@ -51,7 +51,7 @@
                         width: 5840px;
                       "
                     >
-                      <div class="owl-item" style="width: 729.995px">
+                      <div class="owl-item w-[730px]">
                         <div class="item">
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
@@ -64,13 +64,13 @@
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <a href="{{ route('news.show', ['id' => $recent1->id]) }}"><img src="{{ url('/storage/') .'/'. $recent1->fileimage }}" alt="" /></a>
-                              
+                              <a href="{{ route('news.show', ['id' => $recent1->id]) }}"><img src="{{ url('/storage/') .'/'. $recent1->fileimage }}" alt="" class="w-full lg:h-[400px] sm:h-96 object-cover"/></a>
+
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="owl-item" style="width: 729.995px">
+                      <div class="owl-item w-[730px]">
                         <div class="item">
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
@@ -83,12 +83,12 @@
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <a href="{{ route('news.show', ['id' => $recent2->id]) }}"><img src="{{ url('/storage/') .'/'. $recent2->fileimage }}" alt="" /></a>
+                              <a href="{{ route('news.show', ['id' => $recent2->id]) }}"><img src="{{ url('/storage/') .'/'. $recent2->fileimage }}" alt="" class="w-full lg:h-[400px] sm:h-96 object-cover"/></a>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="owl-item" style="width: 729.995px">
+                      <div class="owl-item w-[730px]">
                         <div class="item">
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
@@ -101,12 +101,12 @@
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <a href="{{ route('news.show', ['id' => $recent3->id]) }}"><img src="{{ url('/storage/') .'/'. $recent3->fileimage }}" alt="" /></a>
+                              <a href="{{ route('news.show', ['id' => $recent3->id]) }}"><img src="{{ url('/storage/') .'/'. $recent3->fileimage }}" alt="" class="w-full lg:h-[400px] sm:h-96 object-cover"/></a>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="owl-item" style="width: 729.995px">
+                      <div class="owl-item w-[730px]">
                         <div class="item">
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
@@ -119,7 +119,7 @@
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <a href="{{ route('news.show', ['id' => $recent4->id]) }}"><img src="{{ url('/storage/') .'/'. $recent4->fileimage }}" alt="" /></a>
+                              <a href="{{ route('news.show', ['id' => $recent4->id]) }}"><img src="{{ url('/storage/') .'/'. $recent4->fileimage }}" alt="" class="w-full lg:h-[400px] sm:h-96 object-cover"/></a>
                             </div>
                           </div>
                         </div>

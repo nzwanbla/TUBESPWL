@@ -26,6 +26,8 @@ Route::get('create', [CreateController::class, 'index'])->middleware(['auth', 'v
 
 Route::delete('/news/{id}/', [NewsController::class, 'destroyKomentar'])->name('news.komentar.destroy');
 
+Route::put('/news/{id}/', [NewsController::class, 'updateKomentar'])->name('news.komentar.update'); 
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
