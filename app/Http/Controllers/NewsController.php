@@ -59,7 +59,7 @@ class NewsController extends Controller
     public function show($id)
     {
         
-        $recents = Berita::latest()->take(4)->get();
+        $recents = Berita::latest()->where('status','accept')->take(4)->get();
         
         $selected = berita::find($id);
 

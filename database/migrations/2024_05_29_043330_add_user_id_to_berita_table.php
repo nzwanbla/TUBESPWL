@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('berita', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id')->after('isi3'); // Add the user_id column
-            $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade'); // Add the foreign key constraint
+            $table->unsignedBigInteger('user_id')->after('isi3'); 
+            $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
         });
     }
     

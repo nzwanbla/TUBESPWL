@@ -67,17 +67,18 @@
                     <span class="text-gray-500 text-sm ml-2">{{ $comment->tanggal }}</span>
                 </div>
                 @if ($user = auth()->user())
-                  @if($comment->username == auth()->user()->name or auth()->user()->id == 1) 
                   <div class="flex space-x-2">
+                  @if($comment->username == auth()->user()->name or auth()->user()->id == 1) 
                   <button type="button" class="text-blue-500 hover:text-blue-700 edit-comment-button" data-comment-id="{{ $comment->id }}">Edit</button>
+                  @endif
+                  @if($comment->username == auth()->user()->name or auth()->user()->id == 1 or auth()->user()->moderator == 1) 
                       <form action="{{ route('news.komentar.destroy', ['id' => $comment->id]) }}" method="POST" class="inline">
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="text-red-500 hover:text-red-700" onclick="return confirm('Apakah Anda yakin ingin menghapus komentar ini?')">Hapus</button>
                       </form>
-
+                      @endif
                   </div>
-                  @endif
                 @endif
             </div>
             <p class="text-gray-700">{{ $comment->isi_komentar }}</p>
@@ -251,7 +252,6 @@
         $commentParagraph.hide();
         $(this).hide();
 
-        // Buat textarea
         var $textarea = $('<textarea>')
             .addClass('shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline')
             .val($commentParagraph.text());

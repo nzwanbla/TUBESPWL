@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container mx-auto">
         <label for="user_name">User</label>
         <input type="text" id="user_name" name="user" value="{{Auth::user()?->name}}"disabled>
         {{-- method="POST" action="{{ route('create.store') }}"  --}}
@@ -38,7 +38,6 @@
                     <input type="text" id="judul_berita" name="judul_berita">
                 </div> 
 
-    
                 <div class="form-group" id="jenis">
                     <label for="jenis_berita">Jenis Berita</label>
                     <select id="jenis_berita" name="jenis_berita">
@@ -51,7 +50,7 @@
             <div class="form-group" id="judul">
                     <label for="judul_berita">Gambar Berita</label>
                     <input type="file" class="file-input file-input-bordered w-full max-w-xs" name="fileimage" />
-                </div> 
+            </div>
             <div class="form-group">
                 <label for="judul1">Judul 1</label>
                 <input type="text" id="judul1" name="judul1">

@@ -15,9 +15,10 @@ class DashboardController extends Controller
      */
     public function index(Berita $berita)
     {
-        $userid = Auth::id();
-        //dd($userid);
-        if($userid == 1){
+        $user = Auth::user();
+        $userid = $user->id;
+        $isModerator = $user->moderator; 
+        if($userid == 1 or $isModerator == 1){
         $news = berita::all();
         }else{
         $news = berita::where("user_id",$userid)->get();

@@ -14,7 +14,7 @@ class HeadlineController extends Controller
         $recents = Berita::latest()->where('status', 'accept')->take(4)->get();
 
         $internationals = Berita::where('jenis_berita', 'Internasional')
-            // ->where('status', 'accept')  
+            ->where('status', 'accept')  
             ->latest()
             ->take(4)
             ->get();
@@ -25,13 +25,13 @@ class HeadlineController extends Controller
             ->take(6)
             ->get();
 
-        $excludedIds = $recents->pluck('id') //Id berita yang sudah di ambil dari sport, international dan recent
+        $excludedIds = $recents->pluck('id') 
             ->merge($internationals->pluck('id'))
             ->merge($sports->pluck('id'))
             ->all();
         
 
-        $additionalRecents = Berita::latest()//ambil 6 recent yang belum di ambil
+        $additionalRecents = Berita::latest()
             ->where('status', 'accept')
             ->whereNotIn('id', $excludedIds)
             ->take(6)

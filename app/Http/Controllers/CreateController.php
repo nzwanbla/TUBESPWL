@@ -53,18 +53,17 @@ class CreateController extends Controller
             'fileimage' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
             ]);
 
-
             if ($request->hasFile('fileimage')) {
                 $file = $request->file('fileimage');
                 $fileName = time() . '_' . $file->getClientOriginalName();
-                $filePath = $file->storeAs('images', $fileName, 'public'); // Simpan ke folder 'images' dalam storage/app/public
-                $validated['fileimage'] = $filePath; // Simpan path file ke database
+                $filePath = $file->storeAs('images', $fileName, 'public'); 
+                $validated['fileimage'] = $filePath; 
             }else{
                 $validated['fileimage'] = "star-magazine-14.jpg";
             }
             
             $validated['user_id'] = Auth::id();
-            $validated['status'] = 'Accept';
+            $validated['status'] = 'reject';
 
             Berita::create($validated);
             

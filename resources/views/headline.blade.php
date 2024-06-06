@@ -159,7 +159,7 @@
                 <div class="position-relative image-hover">
                   <img
                     src="{{ url('/storage/') .'/'. $international1->fileimage }}"
-                    class="img-fluid"
+                    class="img-fluid w-full h-64 object-cover"
                     alt="world-news"
                   />
                   <span class="thumb-title">INTERNASIONAL</span>
@@ -177,7 +177,7 @@
                 <div class="position-relative image-hover">
                   <img
                   src="{{ url('/storage/') .'/'. $international1->fileimage }}"
-                    class="img-fluid"
+                    class="img-fluid w-full h-64 object-cover"
                     alt="world-news"
                   />
                   <span class="thumb-title">INTERNASIONAL</span>
@@ -195,7 +195,7 @@
                 <div class="position-relative image-hover">
                   <img
                   src="{{ url('/storage/') .'/'. $international3->fileimage }}"
-                    class="img-fluid"
+                    class="img-fluid w-full h-64 object-cover"
                     alt="world-news"
                   />
                   <span class="thumb-title">INTERNASIONAL</span>
@@ -213,7 +213,7 @@
                 <div class="position-relative image-hover">
                   <img
                   src="{{ url('/storage/') .'/'. $international4->fileimage }}"
-                    class="img-fluid"
+                    class="img-fluid w-full h-64 object-cover"
                     alt="world-news"
                   />
                   <span class="thumb-title">INTERNASIONAL</span>
@@ -257,7 +257,7 @@
                     <div class="position-relative image-hover">
                       <img
                       src="{{ url('/storage/') .'/'. $sport2->fileimage }}"
-                        class="img-fluid"
+                        class="img-fluid w-full h-64 object-cover"
                         alt="world-news"
                       />
                       <span class="thumb-title">SPORT</span>
@@ -270,7 +270,7 @@
                     <div class="position-relative image-hover">
                       <img
                       src="{{ url('/storage/') .'/'. $sport3->fileimage }}"
-                        class="img-fluid"
+                        class="img-fluid w-full h-64 object-cover"
                         alt="world-news"
                       />
                       <span class="thumb-title">SPORT</span>
@@ -285,7 +285,7 @@
                     <div class="position-relative image-hover">
                       <img
                       src="{{ url('/storage/') .'/'. $sport4->fileimage }}"
-                        class="img-fluid"
+                        class="img-fluid w-full h-64 object-cover"
                         alt="world-news"
                       />
                       <span class="thumb-title">SPORT</span>
@@ -298,7 +298,7 @@
                     <div class="position-relative image-hover">
                       <img
                       src="{{ url('/storage/') .'/'. $sport5->fileimage }}"
-                        class="img-fluid"
+                        class="img-fluid w-full h-64 object-cover"
                         alt="world-news"
                       />
                       <span class="thumb-title">SPORT</span>
@@ -326,7 +326,7 @@
                     <div class="position-relative image-hover">
                       <img
                       src="{{ url('/storage/') .'/'. $additionalRecent1->fileimage }}"
-                        class="img-fluid"
+                        class="img-fluid w-full h-64 object-cover"
                         alt="world-news"
                       />
                       <span class="thumb-title">{{$additionalRecent1->jenis_berita}}</span>
@@ -339,7 +339,7 @@
                     <div class="position-relative image-hover">
                       <img
                       src="{{ url('/storage/') .'/'. $additionalRecent2->fileimage }}"
-                        class="img-fluid"
+                        class="img-fluid w-full h-64 object-cover"
                         alt="world-news"
                       />
                       <span class="thumb-title">{{$additionalRecent2->jenis_berita}}</span>
@@ -352,7 +352,7 @@
                     <div class="position-relative image-hover">
                       <img
                       src="{{ url('/storage/') .'/'. $additionalRecent3->fileimage }}"
-                        class="img-fluid"
+                        class="img-fluid w-full h-64 object-cover"
                         alt="world-news"
                       />
                       <span class="thumb-title">{{$additionalRecent3->jenis_berita}}</span>
@@ -367,7 +367,7 @@
                     <div class="position-relative image-hover">
                       <img
                       src="{{ url('/storage/') .'/'. $additionalRecent4->fileimage }}"
-                        class="img-fluid"
+                        class="img-fluid w-full h-64 object-cover"
                         alt="world-news"
                       />
                       <span class="thumb-title">{{$additionalRecent4->jenis_berita}}</span>
@@ -380,7 +380,7 @@
                     <div class="position-relative image-hover">
                       <img
                       src="{{ url('/storage/') .'/'. $additionalRecent5->fileimage }}"
-                        class="img-fluid"
+                        class="img-fluid w-full h-64 object-cover"
                         alt="world-news"
                       />
                       <span class="thumb-title">{{$additionalRecent5->jenis_berita}}</span>
@@ -393,7 +393,7 @@
                     <div class="position-relative image-hover">
                       <img
                       src="{{ url('/storage/') .'/'. $additionalRecent6->fileimage }}"
-                        class="img-fluid"
+                        class="img-fluid w-full h-64 object-cover"
                         alt="world-news"
                       />
                       <span class="thumb-title">{{$additionalRecent6->jenis_berita}}</span>

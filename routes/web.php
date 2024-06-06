@@ -17,10 +17,17 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CreateController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\usermanagement;
+use App\Http\Controllers\ChatController;
 
 
 Route::get('/dashboard',  [dashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/usermanagement',  [userManagement::class, 'index'])->middleware(['auth', 'verified'])->name('usermanagement');
+
+Route::post('/chats/fetch', [ChatController::class, 'fetch'])->name('chats.fetch');
+Route::post('/chats/fetch/admin', [ChatController::class, 'fetchadmin'])->name('chats.fetchadmin');
+Route::post('/chats/users', [ChatController::class, 'user'])->name('chats.users');
+Route::post('/chats/send', [ChatController::class, 'sendMessage'])->name('chats.send');
+Route::post('/chats/sendadmin', [ChatController::class, 'sendMessageadmin'])->name('chats.sendadmin');
 
 Route::get('create', [CreateController::class, 'index'])->middleware(['auth', 'verified'])->name('create');
 

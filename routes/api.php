@@ -50,6 +50,8 @@ Route::post('register', [RegisterController::class, 'store'])->name('register.ru
     Route::delete('edit/{id}', [EditController::class, 'destroy'])->name('edit.delete');
 
     Route::delete('user/{id}', [usermanagement::class, 'destroy'])->name('user.delete');
+    Route::post('user/{id}', [usermanagement::class, 'updatemoderator'])->name('user.moderator');
+
 
 
    // Route::get('dashboard', [dashboardController::class, 'index'])->name('dashboard.show');

@@ -59,12 +59,24 @@
             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
               {{ $users->jumlah_berita}}  
             </td>
-            <td class="px-6 py-4 text-right whitespace-nowrap">
+            <td class="px-6 py-4 text-right whitespace-nowrap text-blue-400">
+              @if($users->id !== 1)
+            <form action="{{ route('user.moderator', $users->id) }}" method="POST" class="mr-2"style="display: inline;">
+                            @csrf
+                            @method('POST')
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin ingin Menjadikan User ini menjadi Moderator?')">
+                            @if($users->moderator == 0)
+                            Jadikan Moderator
+                            @elseif($users->moderator == 1)
+                            Jadikan User 
+                            @endif</button>
+            </form>
             <form action="{{ route('user.delete', $users->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin ingin menghapus user ini?')">Hapus</button>
             </form>
+            @endif
             </td>
           </tr>
         </tbody>
@@ -74,6 +86,11 @@
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  @if(session('error'))
+    <script>
+        alert("{{ session('error') }}");
+    </script>
+@endif
 
 </body>
 
