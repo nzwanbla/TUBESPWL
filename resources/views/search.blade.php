@@ -65,7 +65,7 @@
 <table>
     <thead>
         <tr>
-            <th>Hasil pencarian</th>
+            <th>Berita Terbaru</th>
         </tr>
     </thead>
     <tbody>

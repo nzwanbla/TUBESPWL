@@ -32,7 +32,6 @@
         <a href="{{ route('search.show') }}" class="text-sm font-semibold leading-6 text-gray-300">Search</a>
         <form method="POST" action="{{ route('logout') }}">
         @csrf
-        <button type="submit" class="text-sm font-semibold leading-6 text-gray-300">Logout<span aria-hidden="true">&rarr;</span></type>
         </form>
 
       </div>

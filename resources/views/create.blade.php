@@ -52,7 +52,7 @@
                     <input type="file" class="file-input file-input-bordered w-full max-w-xs" name="fileimage" />
             </div>
             <div class="form-group">
-                <label for="judul1">Judul 1</label>
+                <label for="judul1">Subjudul 1</label>
                 <input type="text" id="judul1" name="judul1">
             </div>
     
@@ -62,7 +62,7 @@
             </div>
     
             <div class="form-group">
-                <label for="judul2">Judul 2</label>
+                <label for="judul2">Subjudul 2</label>
                 <input type="text" id="judul2" name="judul2">
             </div>
     
@@ -72,7 +72,7 @@
             </div>
     
             <div class="form-group">
-                <label for="isi2">Judul 3</label>
+                <label for="isi2">Subjudul 3</label>
                 <input type="text" id="judul3" name="judul3">
             </div>
     
